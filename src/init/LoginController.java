@@ -37,7 +37,7 @@ public class LoginController {
 	
 	//ES INVOCADO SI LOS DATOS DE LOGIN SON CORRECTOS
 	private void loginDone(MongoActions mongo) {
-		mongo.loadDoctor();
+		mongo.loadDoctor(); //CARGO LOS DATOS DEL DOCTOR
 	}
 	
 	//ES INVOCADO SI LOS DATOS DE LOGIN SON INCORRECTOS

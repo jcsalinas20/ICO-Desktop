@@ -7,13 +7,27 @@ public class Consulta {
 	private int planta, numero_sala;
 	private boolean asistido;
 	
-	public Consulta(Paciente paciente, String hora, String dia, int planta, int numero_sala, boolean asistido) {
-		super();
+	public void setPaciente(Paciente paciente) {
 		this.paciente = paciente;
+	}
+
+	public void setHora(String hora) {
 		this.hora = hora;
+	}
+
+	public void setDia(String dia) {
 		this.dia = dia;
+	}
+
+	public void setPlanta(int planta) {
 		this.planta = planta;
+	}
+
+	public void setNumero_sala(int numero_sala) {
 		this.numero_sala = numero_sala;
+	}
+
+	public void setAsistido(boolean asistido) {
 		this.asistido = asistido;
 	}
 

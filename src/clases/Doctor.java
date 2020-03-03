@@ -7,10 +7,19 @@ public class Doctor {
 	String nombre, apellidos;
 	private ArrayList<Consulta> consultas;
 	
-	public Doctor(String nombre, String apellidos, ArrayList<Consulta> consultas) {
-		super();
+	public Doctor() {
+		
+	}
+	
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
+	}
+
+	public void setConsultas(ArrayList<Consulta> consultas) {
 		this.consultas = consultas;
 	}
 
