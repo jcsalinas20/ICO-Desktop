@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.bson.Document;
 
-import com.mongodb.DBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;

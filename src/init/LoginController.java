@@ -1,11 +1,13 @@
 package init;
 
 import conexion.MongoActions;
+import interfaz.Interfaz;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import programa.Data;
 
 public class LoginController {
 	
@@ -38,6 +40,9 @@ public class LoginController {
 	//ES INVOCADO SI LOS DATOS DE LOGIN SON CORRECTOS
 	private void loginDone(MongoActions mongo) {
 		mongo.loadDoctor(); //CARGO LOS DATOS DEL DOCTOR
+		Data.interfaz.close(); //CIERRO LA ESCENA ACTUAL
+		new Interfaz().loadInterface(); //CARGO LA INTERFAZ
+		
 	}
 	
 	//ES INVOCADO SI LOS DATOS DE LOGIN SON INCORRECTOS

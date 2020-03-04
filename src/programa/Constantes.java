@@ -3,7 +3,7 @@ package programa;
 public class Constantes {
 	
 	//DATOS DE CONEXION PARA MONGO DB
-	public static String MONGO_CONNECTION_STRING = "mongodb+srv://admin:admin@clustersalinas-hvex2.mongodb.net/test?retryWrites=true&w=majority\r\n";
+	public static String MONGO_CONNECTION_STRING = "mongodb+srv://admin:admin@clustersalinas-hvex2.mongodb.net/DB_ICO?retryWrites=true&w=majority\r\n";
 	public static String MONGO_DATABASE_NAME = "DB_ICO";
 	
 	//COLECCIONES DE LA BASE DE DATOS
@@ -28,7 +28,7 @@ public class Constantes {
 	public static String MONGO_PACIENTES_NOMBRE = "nombre";
 	public static String MONGO_PACIENTES_APELLIDOS = "apellidos";
 	public static String MONGO_PACIENTES_DNI = "dni";
-	
+		
 	//TEXTOS DE ERROR EN LA BASE DE DATOS
 	public static String MONGO_ERROR_CONNECTION = "No se ha podido establecer conexión con la base de datos.";
 	

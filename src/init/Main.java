@@ -3,11 +3,13 @@ package init;
 import conexion.MongoConnection;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import programa.Data;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
 
 public class Main extends Application {
+			
 	@Override
 	public void start(Stage primaryStage) {
 		loadData(); //CARGO LOS DATOS DEL PROGRAMA
@@ -17,7 +19,8 @@ public class Main extends Application {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene); 
 			primaryStage.setResizable(false); //NO PERMITO QUE SE PUEDA MODIFICAR EL SIZE 
-			primaryStage.show();
+			Data.interfaz = primaryStage;
+			Data.interfaz.show();
 		} catch(Exception e) {
 			
 		}
