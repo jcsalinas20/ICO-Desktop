@@ -42,7 +42,7 @@
             </AnchorPane>
          </items>
       </ToolBar>
-      <AnchorPane fx:id="scene_panel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0" />
+      <AnchorPane fx:id="scene_panel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0" />
       <AnchorPane prefHeight="200.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="nombre_escena" text="Dashboard" textFill="#707070" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="40.0">
