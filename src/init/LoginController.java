@@ -1,16 +1,22 @@
 package init;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import conexion.MongoActions;
 import interfaz.Interfaz;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import programa.Data;
 
-public class LoginController {
-	
+public class LoginController implements Initializable {
+		
 	@FXML
 	private TextField login_user;
 	
@@ -23,8 +29,23 @@ public class LoginController {
 	@FXML
 	private Label login_error;
 	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {	
+		EventHandler<KeyEvent> enterClick = new EventHandler<KeyEvent>() {
+			@Override
+			public void handle(KeyEvent event) {
+				String tecla = event.getCode().getName();
+				if(tecla.equals("Enter")) {
+					controlarLogin();
+				}
+			}
+		};
+		login_user.setOnKeyPressed(enterClick);
+		login_password.setOnKeyPressed(enterClick);
+	}
 	
-	public void controlarClick() {
+		
+	public void controlarLogin() {
 		MongoActions mongo = new MongoActions();
 		String user = login_user.getText();
 		String pass = login_password.getText();
@@ -61,4 +82,5 @@ public class LoginController {
 		login_password.setText("");
 		login_error.setVisible(true);
 	}
+	
 }

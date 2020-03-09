@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="880.0" prefWidth="1889.0" style="-fx-background-color: none;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaz.SearchController">
+<AnchorPane prefHeight="880.0" prefWidth="1889.0" style="-fx-background-color: none;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaz.SearchController">
    <children>
-      <TextField fx:id="search_text" layoutX="118.0" layoutY="14.0" onKeyReleased="#busqueda" prefHeight="54.0" prefWidth="547.0" promptText="Buscar paciente..." />
-      <ListView fx:id="pacientes_list" layoutX="118.0" layoutY="82.0" prefHeight="508.0" prefWidth="547.0" />
-      <AnchorPane layoutX="736.0" layoutY="14.0" prefHeight="576.0" prefWidth="467.0" style="-fx-background-color: #FFC1B3;">
+      <ListView fx:id="pacientes_list" layoutX="118.0" layoutY="82.0" prefHeight="762.0" prefWidth="873.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="45.0" />
+      <AnchorPane layoutX="1031.0" layoutY="22.0" prefHeight="822.0" prefWidth="771.0" style="-fx-background-color: #FFC1B3;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="980.0" AnchorPane.topAnchor="15.0">
          <children>
-            <ImageView fx:id="paciente_image" fitHeight="150.0" fitWidth="150.0" layoutX="159.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="paciente_image" fitHeight="150.0" fitWidth="150.0" layoutX="159.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="31.0" />
          </children>
       </AnchorPane>
+      <TextField fx:id="search_text" onKeyReleased="#busqueda" prefHeight="54.0" prefWidth="877.0" promptText="Buscar paciente..." AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="15.0" />
    </children>
 </AnchorPane>

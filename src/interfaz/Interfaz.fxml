@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToolBar?>
@@ -8,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #F1F3FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaz.Interfaz">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #F1F3FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaz.Interfaz">
    <children>
       <ToolBar orientation="VERTICAL" prefWidth="111.0" style="-fx-background-color: #2784FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
@@ -16,28 +21,56 @@
                <children>
                   <ImageView fx:id="dashboard_image" fitHeight="38.79" fitWidth="38.79" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="240.5">
                      <image>
-                        <Image url="file:/C:/Users/marcm/Desktop/ICO-Desktop-master/images/home_dashboard.png" />
+                        <Image url="@../../images/home_dashboard.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" onAction="#loadDashboard" prefHeight="38.79" prefWidth="38.79" style="-fx-background-color: none;" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="240.5" />
+                  <Button mnemonicParsing="false" onAction="#loadDashboard" prefHeight="38.79" prefWidth="38.79" style="-fx-background-color: none;" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="240.5">
+                     <tooltip>
+                        <Tooltip autoFix="false" text="Dashboard">
+                           <font>
+                              <Font name="SansSerif Regular" size="18.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip></Button>
                   <ImageView fx:id="pacientes_image" fitHeight="24.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="360.0">
                      <image>
-                        <Image url="file:/C:/Users/marcm/Desktop/ICO-Desktop-master/images/pacientes_dashboard.png" />
+                        <Image url="@../../images/pacientes_dashboard.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" onAction="#loadSearch" prefHeight="24.0" prefWidth="36.0" style="-fx-background-color: none;" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="360.0" />
+                  <Button mnemonicParsing="false" onAction="#loadSearch" prefHeight="24.0" prefWidth="36.0" style="-fx-background-color: none;" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="360.0">
+                     <tooltip>
+                        <Tooltip text="Pacientes">
+                           <font>
+                              <Font name="SansSerif Regular" size="18.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip></Button>
                   <ImageView fx:id="consultas_image" fitHeight="38.39" fitWidth="34.56" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="460.0">
                      <image>
-                        <Image url="file:/C:/Users/marcm/Desktop/ICO-Desktop-master/images/consultas_dashboard.png" />
+                        <Image url="@../../images/consultas_dashboard.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" onAction="#loadConsultas" prefHeight="38.39" prefWidth="34.56" style="-fx-background-color: none;" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="460.0" />
+                  <Button mnemonicParsing="false" onAction="#loadConsultas" prefHeight="38.39" prefWidth="34.56" style="-fx-background-color: none;" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="460.0">
+                     <tooltip>
+                        <Tooltip text="Consultas">
+                           <font>
+                              <Font name="SansSerif Regular" size="18.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip></Button>
                   <ImageView fitHeight="38.0" fitWidth="40.0" opacity="0.44" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="570.0">
                      <image>
-                        <Image url="file:/C:/Users/marcm/Desktop/ICO-Desktop-master/images/logout_dashboard.png" />
+                        <Image url="@../../images/logout_dashboard.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" onAction="#logout" prefHeight="38.0" prefWidth="40.0" style="-fx-background-color: none;" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="570.0" />
+                  <Button mnemonicParsing="false" onAction="#logout" prefHeight="38.0" prefWidth="40.0" style="-fx-background-color: none;" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="570.0">
+                     <tooltip>
+                        <Tooltip text="Cerrar sesión">
+                           <font>
+                              <Font name="SansSerif Regular" size="18.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip></Button>
                </children>
             </AnchorPane>
          </items>
