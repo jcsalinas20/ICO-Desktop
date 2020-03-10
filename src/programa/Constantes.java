@@ -23,6 +23,7 @@ public class Constantes {
 	public static String MONGO_CONSULTAS_SALA = "numero_sala";
 	public static String MONGO_CONSULTAS_ASISTENCIA = "asistido";
 	public static String MONGO_CONSULTAS_PACIENTES = "paciente";
+	public static String MONGO_NOTAS_DOCTOR = "notas";
 
 	//CAMPOS DEL ARRAY PACIENTES PERTENECIENTE AL ARRAY CONSULTAS EN LA COLLECTION DOCTORES
 	public static String MONGO_PACIENTES_NOMBRE = "nombre";
@@ -31,6 +32,7 @@ public class Constantes {
 	public static String MONGO_PACIENTES_NACIMIENTO = "fecha_nacimiento";
 	public static String MONGO_PACIENTES_FOTO = "foto";
 	public static String MONGO_PACIENTES_MEDICAMENTOS = "medicamentos";
+	public static String MONGO_NOTAS_PACIENTE = "notas_paciente";
 	
 	//CAMPOS DEL ARRAY MEDICAMENTOS PERTENECIENTE AL ARRAY PACIENTES
 	public static String MONGO_MEDICAMENTO_NOMBRE = "nombre";

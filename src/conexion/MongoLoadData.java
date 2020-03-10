@@ -33,7 +33,7 @@ public class MongoLoadData {
 			Paciente pacientePosition;
 			List<Document> consultas, medicamentosPosition; 
 			List<String> horaPosition;
-			String nombrePaciente, apellidosPaciente, dniPaciente, hora, dia, foto, fechaNacimiento;
+			String nombrePaciente, apellidosPaciente, notasPaciente, dniPaciente, hora, dia, foto, fechaNacimiento, notasConsulta;
 			ArrayList<Medicamento> medicinas;
 			String nombreMedicamento, imagenMedicamento;
 			int[] diasMedicamento;
@@ -67,6 +67,10 @@ public class MongoLoadData {
 				asistido = consulta.getBoolean(Constantes.MONGO_CONSULTAS_ASISTENCIA);
 				consultaPosition.setAsistido(asistido);
 				
+				//RECOJO LAS NOTAS DE LA CONSULTA
+				notasConsulta = consulta.getString(Constantes.MONGO_NOTAS_DOCTOR);
+				consultaPosition.setNotas(notasConsulta);
+				
 				//RECOJO LOS DATOS DEL PACIENTE DE LA CONSULTA
 				pacienteDocument = (Document) consulta.get(Constantes.MONGO_CONSULTAS_PACIENTES);
 				nombrePaciente = pacienteDocument.getString(Constantes.MONGO_PACIENTES_NOMBRE);
@@ -74,7 +78,7 @@ public class MongoLoadData {
 				dniPaciente = pacienteDocument.getString(Constantes.MONGO_PACIENTES_DNI);
 				foto = pacienteDocument.getString(Constantes.MONGO_PACIENTES_FOTO);
 				fechaNacimiento = pacienteDocument.getString(Constantes.MONGO_PACIENTES_NACIMIENTO);
-				
+				notasPaciente = pacienteDocument.getString(Constantes.MONGO_NOTAS_PACIENTE);
 				
 				//RECOJO SUS MEDICINAS
 				medicamentosPosition = (List<Document>) pacienteDocument.get(Constantes.MONGO_PACIENTES_MEDICAMENTOS);
@@ -103,7 +107,7 @@ public class MongoLoadData {
 					medicinas.add(new Medicamento(nombreMedicamento, imagenMedicamento, diasMedicamento, horasMedicamento));
 				}
 				
-				pacientePosition = new Paciente(nombrePaciente, apellidosPaciente, dniPaciente, foto, fechaNacimiento, medicinas);
+				pacientePosition = new Paciente(nombrePaciente, apellidosPaciente, dniPaciente, foto, fechaNacimiento, medicinas, notasPaciente);
 				pacienteList.put(nombrePaciente, pacientePosition);
 				consultaPosition.setPaciente(pacientePosition);
 				

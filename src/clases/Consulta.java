@@ -3,10 +3,18 @@ package clases;
 public class Consulta {
 	
 	private Paciente paciente;
-	private String hora, dia;
+	private String hora, dia, notas;
 	private int planta, numero_sala;
 	private boolean asistido;
-	
+		
+	public String getNotas() {
+		return notas;
+	}
+
+	public void setNotas(String notas) {
+		this.notas = notas;
+	}
+
 	public void setPaciente(Paciente paciente) {
 		this.paciente = paciente;
 	}

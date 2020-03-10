@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -11,12 +12,62 @@
 
 <AnchorPane prefHeight="880.0" prefWidth="1889.0" style="-fx-background-color: none;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaz.SearchController">
    <children>
-      <ListView fx:id="pacientes_list" layoutX="118.0" layoutY="82.0" prefHeight="762.0" prefWidth="873.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="45.0" />
-      <AnchorPane layoutX="1031.0" layoutY="22.0" prefHeight="822.0" prefWidth="771.0" style="-fx-background-color: #FFC1B3;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="980.0" AnchorPane.topAnchor="15.0">
+      <ListView fx:id="pacientes_list" layoutX="118.0" layoutY="82.0" prefHeight="762.0" prefWidth="873.0" style="-fx-fixed-cell-size: 88;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="93.0" />
+      <AnchorPane fx:id="userdata_pane" layoutX="1031.0" layoutY="22.0" prefHeight="822.0" prefWidth="771.0" style="-fx-background-color: #CDE1F9; -fx-background-radius: 50px;" visible="false" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="980.0" AnchorPane.topAnchor="15.0">
          <children>
-            <ImageView fx:id="paciente_image" fitHeight="150.0" fitWidth="150.0" layoutX="159.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="31.0" />
+            <ImageView fx:id="paciente_image" fitHeight="250.0" fitWidth="250.0" layoutX="261.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="30.0" />
+            <Label layoutX="91.0" layoutY="316.0" text="Nombre:" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="316.0">
+               <font>
+                  <Font name="SansSerif Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="nombre_paciente" layoutX="206.0" layoutY="316.0" text="p" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="346.0">
+               <font>
+                  <Font name="SansSerif Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="91.0" layoutY="366.0" text="Apellidos:" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="396.0">
+               <font>
+                  <Font name="SansSerif Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="apellido_paciente" layoutX="206.0" layoutY="366.0" text="p" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="426.0">
+               <font>
+                  <Font name="SansSerif Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="91.0" layoutY="436.0" text="DNI:" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="476.0">
+               <font>
+                  <Font name="SansSerif Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="dni_paciente" layoutX="216.0" layoutY="376.0" text="p" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="506.0">
+               <font>
+                  <Font name="SansSerif Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="91.0" layoutY="477.0" text="Fecha de nacimiento:" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="556.0">
+               <font>
+                  <Font name="SansSerif Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="nacimiento_paciente" layoutX="226.0" layoutY="386.0" text="p" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="586.0">
+               <font>
+                  <Font name="SansSerif Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="101.0" layoutY="487.0" text="Género:" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="636.0">
+               <font>
+                  <Font name="SansSerif Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="genero_paciente" layoutX="236.0" layoutY="396.0" text="p" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="666.0">
+               <font>
+                  <Font name="SansSerif Regular" size="24.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <TextField fx:id="search_text" onKeyReleased="#busqueda" prefHeight="54.0" prefWidth="877.0" promptText="Buscar paciente..." AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="15.0" />
+      <TextField fx:id="search_text" onKeyReleased="#busqueda" prefHeight="54.0" prefWidth="877.0" promptText="Buscar paciente..." style="-fx-background-radius: 50px; -fx-padding: 10px 20px 10px 30px;" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="15.0" />
    </children>
 </AnchorPane>

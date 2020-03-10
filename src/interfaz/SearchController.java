@@ -41,6 +41,24 @@ public class SearchController implements Initializable {
 	@FXML
 	private ImageView paciente_image;
 	
+	@FXML
+	private Label nombre_paciente;
+	
+	@FXML
+	private Label apellido_paciente;
+	
+	@FXML
+	private Label dni_paciente;
+	
+	@FXML
+	private Label nacimiento_paciente;
+	
+	@FXML
+	private Label genero_paciente;
+	
+	@FXML
+	private AnchorPane userdata_pane;
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		pacientes = Data.pacientes;
@@ -104,5 +122,17 @@ public class SearchController implements Initializable {
 	
 	private void showDataPaciente(Paciente p, Image pacienteImage) {
 		paciente_image.setImage(pacienteImage);
+		nombre_paciente.setText(p.getNombre());
+		apellido_paciente.setText(p.getApellidos());
+		dni_paciente.setText(p.getDni());
+		nacimiento_paciente.setText(p.getNacimiento());
+		genero_paciente.setText("Hombre");
+		if(!userdata_pane.isVisible()) {
+			userdata_pane.setVisible(true);
+		}
+	}
+	
+	public void editar() {
+		
 	}
 }
