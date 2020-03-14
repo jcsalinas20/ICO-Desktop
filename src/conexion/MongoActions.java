@@ -41,7 +41,7 @@ public class MongoActions {
 		try {
 			doctor = fi.first();
 			String dbPassword = doctor.getString(Constantes.MONGO_DOCTORES_PASSWORD); //COJO LA PASSWORD EXISTENTE EN LA DB
-			password = new Md5(password).encrypt(); //ENCRIPTO LA CONTRASEÑA CON MD5
+			password = new Md5(password).encrypt(); //ENCRIPTO LA CONTRASEï¿½A CON MD5
 			
 			//COMPRUEBO QUE LA PASSWORD COINCIDA
 			if(password.equals(dbPassword)) {
@@ -55,7 +55,17 @@ public class MongoActions {
 	}
 	
 	public void loadDoctor() {
-		new MongoLoadData().loadDoctor(doctor);
+		//CARGO LAS COLECCIONES NECESARIAS
+		MongoCollection<Document> hospital = db.getCollection(Constantes.MONGO_HOSPITAL_COLLECTION);
+		MongoCollection<Document> consultas = db.getCollection(Constantes.MONGO_CONSULTAS_COLLECTION);
+		MongoCollection<Document> pacientes = db.getCollection(Constantes.MONGO_PACIENTES_COLLECTION);
+		MongoCollection<Document> medicamentos = db.getCollection(Constantes.MONGO_MEDICAMENTOS_COLLECTION);
+
+		//LLAMO A LAS FUNCIONES PARA CARGAR DATOS
+		MongoLoadData loadFunctions = new MongoLoadData();
+		loadFunctions.loadDoctor(doctor, hospital);
+		loadFunctions.loadConsultas(consultas, pacientes);
+		loadFunctions.loadMedicamentos(medicamentos);
 	}
 	
 }

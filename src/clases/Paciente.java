@@ -4,45 +4,45 @@ import java.util.ArrayList;
 
 public class Paciente {
 	
-	private String nombre, apellidos, dni, foto, nacimiento, notas;
-	private ArrayList<Medicamento> medicinas;
-	
-	public Paciente(String nombre, String apellidos, String dni, String foto, String nacimiento, ArrayList<Medicamento> medicinas, String notas) {
-		super();
+	private String nombre, apellidos, dni, foto, nacimiento;
+	private ArrayList<Consulta> consultas;
+	private ArrayList<MedicamentoPaciente> medicinas;
+
+	public Paciente(String nombre, String apellidos, String dni, String foto, String nacimiento, ArrayList<Consulta> consultas, ArrayList<MedicamentoPaciente> medicinas) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni = dni;
 		this.foto = foto;
 		this.nacimiento = nacimiento;
-		this.notas = notas;
+		this.consultas = consultas;
+		this.medicinas = medicinas;
 	}
-	
-	public String getNotas() {
-		return this.notas;
-	}
-	
+
 	public String getNombre() {
-		return this.nombre;
+		return nombre;
 	}
 
 	public String getApellidos() {
-		return this.apellidos;
+		return apellidos;
 	}
 
 	public String getDni() {
-		return this.dni;
+		return dni;
 	}
-	
+
 	public String getFoto() {
-		return this.foto;
+		return foto;
 	}
-	
+
 	public String getNacimiento() {
-		return this.nacimiento;
+		return nacimiento;
 	}
-	
-	public ArrayList<Medicamento> getMedicamentos() {
-		return this.medicinas;
+
+	public ArrayList<Consulta> getConsultas() {
+		return consultas;
 	}
-	
+
+	public ArrayList<MedicamentoPaciente> getMedicinas() {
+		return medicinas;
+	}
 }

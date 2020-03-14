@@ -14,7 +14,9 @@ import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -27,6 +29,8 @@ import javafx.scene.text.FontWeight;
 import programa.Data;
 
 public class SearchController implements Initializable {
+
+	public static Paciente pacienteSeleccionado;
 
 	private HashMap<String, Paciente> pacientes;
 	
@@ -61,8 +65,8 @@ public class SearchController implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		pacientes = Data.pacientes;
-		items = FXCollections.observableArrayList(new ArrayList<AnchorPane>());
+		pacientes = Data.doctor.getPacientes();
+		items = FXCollections.observableArrayList(new ArrayList<>());
 		pacientes_list.setItems(items);
 		busqueda(); //CARGO TODOS LOS PACIENTES
 	}
@@ -81,12 +85,12 @@ public class SearchController implements Initializable {
 			nombrePos = entry.getKey(); //RECORRO EL MAPA RECOGIENDO LOS NOMBRES DE PACIENTES
 			if(nombrePos.startsWith(textoBusqueda)) {
 				anchorPos = castToAnchor(entry.getValue());
-				anchorPacientes.add(anchorPos); //AÑADO LOS PACIENTES QUE COINCIDAN CON LA BUSQUEDA AL ARRAYLIST
+				anchorPacientes.add(anchorPos); //AÃ‘ADO LOS PACIENTES QUE COINCIDAN CON LA BUSQUEDA AL ARRAYLIST
 			}
 		}
 		
 		items = FXCollections.observableArrayList(anchorPacientes);
-		pacientes_list.setItems(items); //AÑADO LOS PACIENTES DE LA LISTA AL LISTVIEW
+		pacientes_list.setItems(items); //AÃ‘ADO LOS PACIENTES DE LA LISTA AL LISTVIEW
 	}
 	
 	private AnchorPane castToAnchor(Paciente p) {
@@ -106,7 +110,7 @@ public class SearchController implements Initializable {
 		nombrePaciente.setLayoutY(32);
 		nombrePaciente.setFont(Font.font("SansSerif", FontWeight.BOLD, FontPosture.REGULAR, 18));
 
-		//AÑADO LA IMAGE Y EL LABEL AL PANE
+		//AÃ‘ADO LA IMAGE Y EL LABEL AL PANE
 		anchor.getChildren().add(pacienteImage);
 		anchor.getChildren().add(nombrePaciente);
 		
@@ -130,9 +134,29 @@ public class SearchController implements Initializable {
 		if(!userdata_pane.isVisible()) {
 			userdata_pane.setVisible(true);
 		}
+		pacienteSeleccionado = p;
 	}
-	
+
+	//MUESTRA LOS DATOS DEL PACIENTE SELECCIONADO
 	public void editar() {
-		
+		try {
+			AnchorPane root;
+			AnchorPane scene_panel = Interfaz.scene_panel;
+
+			root = (AnchorPane) FXMLLoader.load(getClass().getResource("Pacientes.fxml"));
+
+			ObservableList<Node> panelHijos = scene_panel.getChildren();
+			if(panelHijos.size() > 0) {
+				panelHijos.remove(0);
+			}
+
+			scene_panel.getChildren().add(root);
+
+			String screenTitle = pacienteSeleccionado.getNombre() + " " + pacienteSeleccionado.getApellidos();
+			Interfaz.nombre_escena.setText(screenTitle);
+
+		} catch(Exception e) {
+
+		}
 	}
 }

@@ -1,5 +1,6 @@
 package interfaz;
 
+import clases.Paciente;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,13 +21,13 @@ public class Interfaz {
 		
 	private Scene escena;
 
-	private AnchorPane root;
+	public static AnchorPane root;
 
 	@FXML
-	public AnchorPane scene_panel;
+	public static AnchorPane scene_panel;
 
 	@FXML
-	public Label nombre_escena;
+	public static Label nombre_escena;
 
 	@FXML
 	public ImageView dashboard_image;
@@ -106,6 +107,17 @@ public class Interfaz {
 			pacientes_image.setOpacity(1);
 			consultas_image.setOpacity(0.44);
 			dashboard_image.setOpacity(0.44);
+		} catch(Exception e) {
+
+		}
+	}
+
+	public void loadPaciente(String screenTitle) {
+		try {
+			root = loadPanel("Pacientes.fxml");
+			removeAnchorChildren();
+			scene_panel.getChildren().add(root);
+			nombre_escena.setText(screenTitle);
 		} catch(Exception e) {
 
 		}

@@ -8,37 +8,55 @@ public class Constantes {
 	
 	//COLECCIONES DE LA BASE DE DATOS
 	public static String MONGO_DOCTOR_COLLECTION = "Doctores";
+	public static String MONGO_HOSPITAL_COLLECTION = "Hospitales";
+	public static String MONGO_CONSULTAS_COLLECTION = "Consultas";
+	public static String MONGO_PACIENTES_COLLECTION = "Pacientes";
+	public static String MONGO_MEDICAMENTOS_COLLECTION = "Medicamentos";
 	
 	//CAMPOS DE LA COLLECTION DE DOCTORES
 	public static String MONGO_DOCTORES_USERNAME = "username";
 	public static String MONGO_DOCTORES_PASSWORD = "password";
+	public static String MONGO_DOCTORES_ID = "id_doctor";
 	public static String MONGO_DOCTORES_NAME = "nombre";
 	public static String MONGO_DOCTORES_APELLIDOS = "apellidos";
-	public static String MONGO_DOCTORES_CONSULTAS = "consultas";
-	
-	//CAMPOS DEL ARRAY CONSULTAS DE LA COLLECTION DE DOCTORES
-	public static String MONGO_CONSULTAS_HORA = "hora";
-	public static String MONGO_CONSULTAS_DIA = "dia";
-	public static String MONGO_CONSULTAS_PLANTA = "planta";
-	public static String MONGO_CONSULTAS_SALA = "numero_sala";
-	public static String MONGO_CONSULTAS_ASISTENCIA = "asistido";
-	public static String MONGO_CONSULTAS_PACIENTES = "paciente";
-	public static String MONGO_NOTAS_DOCTOR = "notas";
+	public static String MONGO_DOCTORES_PLANTA = "planta";
+	public static String MONGO_DOCTORES_SALA = "sala";
+	public static String MONGO_DOCTORES_HOSPITAL = "id_hospital";
+
+	//CAMPOS DE LA COLLECTION HOSPITAL
+	public static String MONGO_HOSPITAL_ID = "id_hospital";
+	public static String MONGO_HOSPITAL_DIRECCION = "direccion";
+
+	//CAMPOS DE LA COLLECTION DE MEDICAMENTOS
+	public static String MONGO_MEDICAMENTOS_ID = "id";
+	public static String MONGO_MEDICAMENTOS_NOMBRE = "nombre";
+	public static String MONGO_MEDICAMENTOS_IMAGEN = "imagen";
+
+	//CAMPOS DE LA COLLECTION DE CONSULTAS
+	public static String MONGO_CONSULTAS_DOCTORID = "id_doctor";
+	public static String MONGO_CONSULTAS_PACIENTEID = "id_paciente";
+	public static String MONGO_CONSULTAS_CONSULTASARRAY = "consultas";
+
+	//CAMPOS DEL ARRAY DE CONSULTAS
+	public static String MONGO_CONSULTA_HORA = "hora";
+	public static String MONGO_CONSULTA_DIA = "dia";
+	public static String MONGO_CONSULTA_ASISTENCIA = "asistido";
+	public static String MONGO_CONSULTA_NOTASPACIENTE = "notas";
+	public static String MONGO_CONSULTA_NOTASDOCTOR = "notas_doc";
 
 	//CAMPOS DEL ARRAY PACIENTES PERTENECIENTE AL ARRAY CONSULTAS EN LA COLLECTION DOCTORES
+	public static String MONGO_PACIENTES_ID = "id_paciente";
 	public static String MONGO_PACIENTES_NOMBRE = "nombre";
 	public static String MONGO_PACIENTES_APELLIDOS = "apellidos";
 	public static String MONGO_PACIENTES_DNI = "dni";
 	public static String MONGO_PACIENTES_NACIMIENTO = "fecha_nacimiento";
 	public static String MONGO_PACIENTES_FOTO = "foto";
 	public static String MONGO_PACIENTES_MEDICAMENTOS = "medicamentos";
-	public static String MONGO_NOTAS_PACIENTE = "notas_paciente";
-	
-	//CAMPOS DEL ARRAY MEDICAMENTOS PERTENECIENTE AL ARRAY PACIENTES
-	public static String MONGO_MEDICAMENTO_NOMBRE = "nombre";
+
+	//CAMPOS DEL ARRAY MEDICAMENTOS PERTENECIENTE A PACIENTES
+	public static String MONGO_MEDICAMENTO_ID = "id";
 	public static String MONGO_MEDICAMENTO_DIAS = "dias";
 	public static String MONGO_MEDICAMENTO_HORAS = "hora";
-	public static String MONGO_MEDICAMENTO_IMAGEN = "imagen";
 	
 	//CAMPOS DEL OBJETO DIAS
 	public static String MONGO_DIA_LUNES = "lunes";

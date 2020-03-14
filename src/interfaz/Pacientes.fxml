@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="880.0" prefWidth="1889.0" style="-fx-background-color: none;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaz.PacientesController">
+   <children>
+      <Label layoutX="248.0" layoutY="34.0" text="CONSULTAS" AnchorPane.leftAnchor="380.0">
+         <font>
+            <Font name="SansSerif Bold" size="40.0" />
+         </font>
+      </Label>
+      <TabPane layoutX="176.0" layoutY="119.0" prefHeight="730.0" prefWidth="996.0" style="-fx-background-color: #327DDF;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="100.0">
+        <tabs>
+          <Tab text="Consultas">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="consultasTable" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn prefWidth="135.0" text="DÍA" />
+                            <TableColumn prefWidth="135.0" text="HORA" />
+                              <TableColumn prefWidth="295.0" text="NOTAS PACIENTE" />
+                              <TableColumn prefWidth="295.0" text="NOTAS DOCTOR" />
+                              <TableColumn prefWidth="135.0" text="ASISTENCIA" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Medicamentos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="701.0" prefWidth="1008.0">
+                     <children>
+                        <TableView fx:id="medicamentosTable" prefHeight="710.0" prefWidth="1006.0">
+                          <columns>
+                            <TableColumn prefWidth="200.0" text="Medicamento" />
+                            <TableColumn prefWidth="170.0" text="HORAS" />
+                              <TableColumn prefWidth="90.0" text="LUNES" />
+                              <TableColumn prefWidth="90.0" text="MARTES" />
+                              <TableColumn prefWidth="90.0" text="MIÉRCOLES" />
+                              <TableColumn prefWidth="90.0" text="JUEVES" />
+                              <TableColumn prefWidth="90.0" text="VIERNES" />
+                              <TableColumn prefWidth="90.0" text="SÁBADO" />
+                              <TableColumn prefWidth="90.0" text="DOMINGO" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
