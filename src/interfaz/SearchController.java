@@ -78,12 +78,12 @@ public class SearchController implements Initializable {
 		
 		//BUSCO LOS PACIENTES
 		ArrayList<AnchorPane> anchorPacientes = new ArrayList<>(); //RECOGE LOS ANCHOR PANE DE CADA PACIENTE
-		String textoBusqueda = search_text.getText(); //RECOJO EL TEXTO ESCRITO POR EL USUARIO
+		String textoBusqueda = search_text.getText().replaceAll(" ", ""); //RECOJO EL TEXTO ESCRITO POR EL USUARIO
 		String nombrePos;
 		AnchorPane anchorPos;
 		for(Entry<String, Paciente> entry : pacientes.entrySet()) {
 			nombrePos = entry.getKey(); //RECORRO EL MAPA RECOGIENDO LOS NOMBRES DE PACIENTES
-			if(nombrePos.startsWith(textoBusqueda)) {
+			if(nombrePos.startsWith(textoBusqueda) || nombrePos.contains(textoBusqueda)) {
 				anchorPos = castToAnchor(entry.getValue());
 				anchorPacientes.add(anchorPos); //AÑADO LOS PACIENTES QUE COINCIDAN CON LA BUSQUEDA AL ARRAYLIST
 			}

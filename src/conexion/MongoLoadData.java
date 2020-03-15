@@ -62,7 +62,7 @@ public class MongoLoadData {
 			Paciente pacientePos;
 			MedicamentoPaciente medicinaPos;
 			int id_paciente, id_medicamento;
-			int[] diasMedicamento = new int[7];
+			int[] diasMedicamento;
 			ArrayList<String> horasMedicamento;
 			List<String> horaPosition;
 			String hora, dia, notasPaciente, notasDoctor, nombre, apellidos, dni, foto, nacimiento, hashKey;
@@ -91,8 +91,9 @@ public class MongoLoadData {
 				medicinas = new ArrayList<>();
 				medicinasDocumentList = (List<Document>) buscarPacienteConsulta.get(Constantes.MONGO_PACIENTES_MEDICAMENTOS);
 				for(Document medicinaPosDoc : medicinasDocumentList) {
-					id_medicamento = medicinaPosDoc.getInteger(Constantes.MONGO_MEDICAMENTOS_ID);
+					id_medicamento = medicinaPosDoc.getInteger(Constantes.MONGO_MEDICAMENTO_ID);
 					diasDocument = (Document) medicinaPosDoc.get(Constantes.MONGO_MEDICAMENTO_DIAS);
+					diasMedicamento = new int[7];
 					diasMedicamento[0] = diasDocument.getInteger(Constantes.MONGO_DIA_LUNES);
 					diasMedicamento[1] = diasDocument.getInteger(Constantes.MONGO_DIA_MARTES);
 					diasMedicamento[2] = diasDocument.getInteger(Constantes.MONGO_DIA_MIERCOLES);
@@ -100,6 +101,7 @@ public class MongoLoadData {
 					diasMedicamento[4] = diasDocument.getInteger(Constantes.MONGO_DIA_VIERNES);
 					diasMedicamento[5] = diasDocument.getInteger(Constantes.MONGO_DIA_SABADO);
 					diasMedicamento[6] = diasDocument.getInteger(Constantes.MONGO_DIA_DOMINGO);
+
 					//CARGO LAS HORAS A LAS QUE EL PACIENTE DEBE TOMAR LOS MEDICAMENTOS
 					horasMedicamento = new ArrayList<>();
 					horaPosition = (List<String>) medicinaPosDoc.get(Constantes.MONGO_MEDICAMENTO_HORAS);

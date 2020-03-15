@@ -1,33 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="880.0" prefWidth="1889.0" style="-fx-background-color: none;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaz.PacientesController">
    <children>
-      <Label layoutX="248.0" layoutY="34.0" text="CONSULTAS" AnchorPane.leftAnchor="380.0">
-         <font>
-            <Font name="SansSerif Bold" size="40.0" />
-         </font>
-      </Label>
-      <TabPane layoutX="176.0" layoutY="119.0" prefHeight="730.0" prefWidth="996.0" style="-fx-background-color: #327DDF;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="100.0">
+      <TabPane layoutX="176.0" layoutY="119.0" prefHeight="730.0" prefWidth="996.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="70.0">
         <tabs>
           <Tab text="Consultas">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="consultasTable" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="consultasTable" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="698.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn prefWidth="135.0" text="DÍA" />
-                            <TableColumn prefWidth="135.0" text="HORA" />
-                              <TableColumn prefWidth="295.0" text="NOTAS PACIENTE" />
-                              <TableColumn prefWidth="295.0" text="NOTAS DOCTOR" />
-                              <TableColumn prefWidth="135.0" text="ASISTENCIA" />
+                            <TableColumn fx:id="columnDia" prefWidth="135.0" style="-fx-alignment: CENTER;" text="DÍA" />
+                            <TableColumn fx:id="columnHora" prefWidth="135.0" style="-fx-alignment: CENTER;" text="HORA" />
+                              <TableColumn fx:id="columnNotasPaciente" prefWidth="295.0" style="-fx-alignment: CENTER;" text="NOTAS PACIENTE" />
+                              <TableColumn fx:id="columnNotasDoctor" prefWidth="295.0" style="-fx-alignment: CENTER;" text="NOTAS DOCTOR" />
+                              <TableColumn fx:id="columnAsistencia" prefWidth="135.0" style="-fx-alignment: CENTER;" text="ASISTENCIA" />
                           </columns>
                         </TableView>
                      </children>
@@ -38,17 +31,17 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="701.0" prefWidth="1008.0">
                      <children>
-                        <TableView fx:id="medicamentosTable" prefHeight="710.0" prefWidth="1006.0">
+                        <TableView fx:id="medicamentosTable" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="693.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn prefWidth="200.0" text="Medicamento" />
-                            <TableColumn prefWidth="170.0" text="HORAS" />
-                              <TableColumn prefWidth="90.0" text="LUNES" />
-                              <TableColumn prefWidth="90.0" text="MARTES" />
-                              <TableColumn prefWidth="90.0" text="MIÉRCOLES" />
-                              <TableColumn prefWidth="90.0" text="JUEVES" />
-                              <TableColumn prefWidth="90.0" text="VIERNES" />
-                              <TableColumn prefWidth="90.0" text="SÁBADO" />
-                              <TableColumn prefWidth="90.0" text="DOMINGO" />
+                            <TableColumn fx:id="columnMedicamento" prefWidth="200.0" style="-fx-alignment: CENTER;" text="Medicamento" />
+                            <TableColumn fx:id="columnHoras" prefWidth="170.0" style="-fx-alignment: CENTER;" text="HORAS" />
+                              <TableColumn fx:id="columnLunes" prefWidth="90.0" style="-fx-alignment: CENTER;" text="LUNES" />
+                              <TableColumn fx:id="columnMartes" prefWidth="90.0" style="-fx-alignment: CENTER;" text="MARTES" />
+                              <TableColumn fx:id="columnMiercoles" prefWidth="90.0" style="-fx-alignment: CENTER;" text="MIÉRCOLES" />
+                              <TableColumn fx:id="columnJueves" prefWidth="90.0" style="-fx-alignment: CENTER;" text="JUEVES" />
+                              <TableColumn fx:id="columnViernes" prefWidth="90.0" style="-fx-alignment: CENTER;" text="VIERNES" />
+                              <TableColumn fx:id="columnSabado" prefWidth="90.0" style="-fx-alignment: CENTER;" text="SÁBADO" />
+                              <TableColumn fx:id="columnDomingo" prefWidth="90.0" style="-fx-alignment: CENTER;" text="DOMINGO" />
                           </columns>
                         </TableView>
                      </children>
