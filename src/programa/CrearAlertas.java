@@ -9,5 +9,23 @@ public class CrearAlertas {
 		Alert alert = new Alert(Alert.AlertType.ERROR, Constantes.MONGO_ERROR_CONNECTION);
 		alert.show();
 	}
-	
+
+	//ERROR AL EDITAR EL MEDICAMENTO
+	public static void medicamentoEditHoursError() {
+		Alert alert = new Alert(Alert.AlertType.ERROR, Constantes.MEDICAMENTO_EDIT_ERROR);
+		alert.show();
+	}
+
+	//ERROR AL AÑADIR UN NUEVO MEDICAMENTO
+	public static void medicamentoAddError() {
+		Alert alert = new Alert(Alert.AlertType.ERROR, Constantes.MEDICAMENTO_ADD_ERROR);
+		alert.show();
+	}
+
+	//ERROR AL AÑADIR UN NUEVO MEDICAMENTO
+	public static void medicamentoAddDuplicated() {
+		Alert alert = new Alert(Alert.AlertType.ERROR, Constantes.MEDICAMENTO_ADD_DUPLICATED);
+		alert.show();
+	}
+
 }

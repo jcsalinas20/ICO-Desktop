@@ -15,6 +15,7 @@ public class Data {
 
 	public static Doctor doctor;
 	public static HashMap<Integer, Medicamentos> medicamentos;
+	public static int total_consultas;
 	public static String direccionHospital;
 
 	public static Stage interfaz;

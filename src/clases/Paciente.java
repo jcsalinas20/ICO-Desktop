@@ -3,12 +3,17 @@ package clases;
 import java.util.ArrayList;
 
 public class Paciente {
-	
+
+	private int id_paciente, id_consultas;
 	private String nombre, apellidos, dni, foto, nacimiento;
 	private ArrayList<Consulta> consultas;
 	private ArrayList<MedicamentoPaciente> medicinas;
+	private ArrayList<HistorialPaciente> historial;
 
-	public Paciente(String nombre, String apellidos, String dni, String foto, String nacimiento, ArrayList<Consulta> consultas, ArrayList<MedicamentoPaciente> medicinas) {
+	public Paciente(int id_paciente, int id_consultas, ArrayList<HistorialPaciente> historial, String nombre, String apellidos, String dni, String foto, String nacimiento, ArrayList<Consulta> consultas, ArrayList<MedicamentoPaciente> medicinas) {
+		this.id_paciente = id_paciente;
+		this.id_consultas = id_consultas;
+		this.historial = historial;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni = dni;
@@ -16,6 +21,14 @@ public class Paciente {
 		this.nacimiento = nacimiento;
 		this.consultas = consultas;
 		this.medicinas = medicinas;
+	}
+
+	public int getId_consultas() {
+		return id_consultas;
+	}
+
+	public int getId_paciente() {
+		return id_paciente;
 	}
 
 	public String getNombre() {
@@ -36,6 +49,10 @@ public class Paciente {
 
 	public String getNacimiento() {
 		return nacimiento;
+	}
+
+	public ArrayList<HistorialPaciente> getHistorial() {
+		return historial;
 	}
 
 	public ArrayList<Consulta> getConsultas() {

@@ -1,5 +1,10 @@
 package conexion;
 
+import clases.MedicamentoPaciente;
+import clases.TablaConsultas;
+import clases.TablaMedicamentos;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import org.bson.Document;
 
 import com.mongodb.client.FindIterable;
@@ -60,12 +65,43 @@ public class MongoActions {
 		MongoCollection<Document> consultas = db.getCollection(Constantes.MONGO_CONSULTAS_COLLECTION);
 		MongoCollection<Document> pacientes = db.getCollection(Constantes.MONGO_PACIENTES_COLLECTION);
 		MongoCollection<Document> medicamentos = db.getCollection(Constantes.MONGO_MEDICAMENTOS_COLLECTION);
+		MongoCollection<Document> historial = db.getCollection(Constantes.MONGO_HISTORIAL_COLLECTION);
 
 		//LLAMO A LAS FUNCIONES PARA CARGAR DATOS
 		MongoLoadData loadFunctions = new MongoLoadData();
 		loadFunctions.loadDoctor(doctor, hospital);
-		loadFunctions.loadConsultas(consultas, pacientes);
+		loadFunctions.loadConsultas(consultas, pacientes, historial);
 		loadFunctions.loadMedicamentos(medicamentos);
 	}
-	
+
+	public void removeMedicamento(int id_paciente, int id_medicamento) {
+		MongoCollection<Document> pacientes = db.getCollection(Constantes.MONGO_PACIENTES_COLLECTION);
+		new MongoMedicamentos().eliminarMedicamento(id_paciente, id_medicamento);
+	}
+
+	public void editHorasMedicamento(int id_paciente, int id_medicamento, String horas) {
+		MongoCollection<Document> medicamentos = db.getCollection(Constantes.MONGO_MEDICAMENTOS_COLLECTION);
+		MongoCollection<Document> pacientes = db.getCollection(Constantes.MONGO_PACIENTES_COLLECTION);
+		new MongoMedicamentos().editarHorasMedicamento(id_paciente, id_medicamento, horas);
+	}
+
+	public void addMedicamento(TablaMedicamentos nuevoMedicamento) {
+
+	}
+
+	public void editMedicamentoDay(TablaMedicamentos data, String day, int nuevo_valor) {
+
+	}
+
+	public void changeAsistido(TablaConsultas data) {
+
+	}
+
+	public void changeNotasPaciente(TablaConsultas data) {
+
+	}
+
+	public void changeNotasDoctor(TablaConsultas data) {
+
+	}
 }

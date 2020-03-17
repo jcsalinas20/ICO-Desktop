@@ -47,7 +47,7 @@ public class MongoLoadData {
 			Data.direccionHospital = buscarHospital.getString(Constantes.MONGO_HOSPITAL_DIRECCION);
 		}
 
-		public void loadConsultas(MongoCollection<Document> consultasCollection, MongoCollection<Document> pacientesCollection) {
+		public void loadConsultas(MongoCollection<Document> consultasCollection, MongoCollection<Document> pacientesCollection, MongoCollection<Document> historialCollection) {
 
 			HashMap<String, Paciente> pacientesDoctor = new HashMap<>();
 
@@ -57,22 +57,27 @@ public class MongoLoadData {
 
 			//RECOJO LAS CONSULTAS ASIGNADAS AL DOCTOR Y LOS PACIENTES
 				//VARIABLES REQUERIDAS PARA EL BUCLE
-			Document buscarPacienteConsulta, diasDocument;
-			FindIterable<Document> pacienteConsultaIterable;
+			Document buscarPacienteConsulta, diasDocument, buscarHistorial;
+			FindIterable<Document> pacienteConsultaIterable, medicamentoDocument;
 			Paciente pacientePos;
 			MedicamentoPaciente medicinaPos;
-			int id_paciente, id_medicamento;
+			int id_paciente, id_medicamento, id_consulta_paciente, id_consulta;
 			int[] diasMedicamento;
 			ArrayList<String> horasMedicamento;
 			List<String> horaPosition;
-			String hora, dia, notasPaciente, notasDoctor, nombre, apellidos, dni, foto, nacimiento, hashKey;
+			String hora, dia, notasPaciente, notasDoctor, nombre, apellidos, dni, foto, nacimiento, hashKey, diaHistorial, notasDoctorHistorial;
 			boolean asistido;
 			Consulta consultaPos;
 			ArrayList<Consulta> consultas;
 			ArrayList<MedicamentoPaciente> medicinas;
-			List<Document> medicinasDocumentList, consultasDocumentList;
+			ArrayList<HistorialPaciente> historial;
+			HistorialPaciente historialPaciente;
+
+			List<Document> medicinasDocumentList, consultasDocumentList, historialList;
 				//ITERO LOS RESULTADOS DE LA BUSQUEDA DE CONSULTAS
 			for(Document consulta : consultasDoctorIterable) {
+
+				id_consulta_paciente = consulta.getInteger(Constantes.MONGO_CONSULTAS_ID); //ID DE LA CONSULTA DE ESTE MEDICO CON ESTE PACIENTE
 
 					//BUSCO EL PACIENTE
 				id_paciente = consulta.getInteger(Constantes.MONGO_CONSULTAS_PACIENTEID);
@@ -86,6 +91,20 @@ public class MongoLoadData {
 				dni = buscarPacienteConsulta.getString(Constantes.MONGO_PACIENTES_DNI);
 				foto = buscarPacienteConsulta.getString(Constantes.MONGO_PACIENTES_FOTO);
 				nacimiento = buscarPacienteConsulta.getString(Constantes.MONGO_PACIENTES_NACIMIENTO);
+
+					//BUSCO SU HISTORIAL DE MEDICINAS
+				historial = new ArrayList<>();
+				buscarHistorial = new Document(Constantes.MONGO_HISTORIAL_PACIENTEID, id_paciente);
+				medicamentoDocument = historialCollection.find(buscarHistorial);
+				if(medicamentoDocument.cursor().hasNext()) {
+					historialList = (List<Document>) medicamentoDocument.first().get(Constantes.MONGO_HISTORIAL_CONSULTAS);
+					for (Document posHistorial : historialList) {
+						diaHistorial = posHistorial.getString(Constantes.MONGO_HISTORIAL_FECHA);
+						notasDoctorHistorial = posHistorial.getString(Constantes.MONGO_HISTORIAL_NOTA);
+						historialPaciente = new HistorialPaciente(diaHistorial, notasDoctorHistorial);
+						historial.add(historialPaciente);
+					}
+				}
 
 						//RECOJO SUS MEDICINAS
 				medicinas = new ArrayList<>();
@@ -121,11 +140,12 @@ public class MongoLoadData {
 					notasDoctor = consultaDocument.getString(Constantes.MONGO_CONSULTA_NOTASDOCTOR);
 					notasPaciente = consultaDocument.getString(Constantes.MONGO_CONSULTA_NOTASPACIENTE);
 					asistido = consultaDocument.getBoolean(Constantes.MONGO_CONSULTA_ASISTENCIA);
-					consultaPos = new Consulta(hora, dia, notasPaciente, notasDoctor, asistido);
+					id_consulta = consultaDocument.getInteger(Constantes.MONGO_CONSULTA_ID);
+					consultaPos = new Consulta(id_consulta, hora, dia, notasPaciente, notasDoctor, asistido);
 					consultas.add(consultaPos);
 				}
 
-				pacientePos = new Paciente(nombre, apellidos, dni, foto, nacimiento, consultas, medicinas);
+				pacientePos = new Paciente(id_paciente, id_consulta_paciente, historial, nombre, apellidos, dni, foto, nacimiento, consultas, medicinas);
 				hashKey = (nombre + apellidos).replaceAll(" ", "");
 				pacientesDoctor.put(hashKey, pacientePos);
 			}

@@ -12,6 +12,7 @@ public class Constantes {
 	public static String MONGO_CONSULTAS_COLLECTION = "Consultas";
 	public static String MONGO_PACIENTES_COLLECTION = "Pacientes";
 	public static String MONGO_MEDICAMENTOS_COLLECTION = "Medicamentos";
+	public static String MONGO_HISTORIAL_COLLECTION = "Historial_Consultas";
 	
 	//CAMPOS DE LA COLLECTION DE DOCTORES
 	public static String MONGO_DOCTORES_USERNAME = "username";
@@ -36,8 +37,10 @@ public class Constantes {
 	public static String MONGO_CONSULTAS_DOCTORID = "id_doctor";
 	public static String MONGO_CONSULTAS_PACIENTEID = "id_paciente";
 	public static String MONGO_CONSULTAS_CONSULTASARRAY = "consultas";
+	public static String MONGO_CONSULTAS_ID = "id_consulta";
 
 	//CAMPOS DEL ARRAY DE CONSULTAS
+	public static String MONGO_CONSULTA_ID = "num_consulta";
 	public static String MONGO_CONSULTA_HORA = "hora";
 	public static String MONGO_CONSULTA_DIA = "dia";
 	public static String MONGO_CONSULTA_ASISTENCIA = "asistido";
@@ -66,6 +69,14 @@ public class Constantes {
 	public static String MONGO_DIA_VIERNES = "viernes";
 	public static String MONGO_DIA_SABADO = "sabado";
 	public static String MONGO_DIA_DOMINGO = "domingo";
+
+	//CAMPOS DE LA COLLECTION DE HISTORIAL
+	public static String MONGO_HISTORIAL_PACIENTEID = "id_paciente";
+	public static String MONGO_HISTORIAL_CONSULTAS = "consultas";
+
+	//CAMPOS DEL ARRAY DE CONSULTAS DE HISTORIAL
+	public static String MONGO_HISTORIAL_FECHA = "dia";
+	public static String MONGO_HISTORIAL_NOTA = "notas_doc";
 	
 	//TEXTOS DE ERROR EN LA BASE DE DATOS
 	public static String MONGO_ERROR_CONNECTION = "No se ha podido establecer conexión con la base de datos.";
@@ -74,4 +85,12 @@ public class Constantes {
 	public static String DASHBOARD_SCENE = "Dashboard";
 	public static String SEARCH_SCENE = "Pacientes";
 	public static String CONSULTAS_SCENE = "Consultas";
+
+	//TEXTOS DE ERROR AL MODIFICAR DATOS DEL PACIENTE
+	public static String MEDICAMENTO_EDIT_ERROR = "El formato de horas no era el correcto. Introduce las horas con el siguiente formato 00:00 separadas por punto y coma.";
+	public static String MEDICAMENTO_ADD_ERROR = "Los datos introducidos no son correctos.";
+	public static String MEDICAMENTO_ADD_DUPLICATED = "Este medicamento ya está asignado al paciente.";
+
+	//TEXTOS PARA EDITAR DATOS DEL PACIENTE
+	public static String ELIMINAR_MEDICAMENTO_CONFIRMATION = "¿Estás seguro de eliminar este medicamento?";
 }
