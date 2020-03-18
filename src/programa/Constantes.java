@@ -86,13 +86,14 @@ public class Constantes {
 	//NOMBRE DE LAS ESCENAS
 	public static String DASHBOARD_SCENE = "Dashboard";
 	public static String SEARCH_SCENE = "Pacientes";
-	public static String CONSULTAS_SCENE = "Consultas";
 
 	//TEXTOS DE ERROR AL MODIFICAR DATOS DEL PACIENTE
 	public static String MEDICAMENTO_EDIT_ERROR = "El formato de horas no era el correcto. Introduce las horas con el siguiente formato 00:00 separadas por punto y coma.";
 	public static String MEDICAMENTO_ADD_ERROR = "Los datos introducidos no son correctos.";
 	public static String MEDICAMENTO_ADD_DUPLICATED = "Este medicamento ya está asignado al paciente.";
 
-	//TEXTOS PARA EDITAR DATOS DEL PACIENTE
+	//TEXTOS DE CONFIRMACION
 	public static String ELIMINAR_MEDICAMENTO_CONFIRMATION = "¿Estás seguro de eliminar este medicamento?";
+	public static String DASHBOARD_EDIT_CONFIRMATION = "¿Seguro que quieres atender a este paciente?";
+	public static String ARCHIVAR_CONSULTA_CONFIRMATION = "¿Seguro que quieres marcar la consulta como realizada? La información se archivará.";
 }

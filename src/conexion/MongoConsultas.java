@@ -31,7 +31,7 @@ public class MongoConsultas {
         searchOldConsulta();
     }
 
-    public void changeAsistido() {
+    public void changeAsistido(MongoCollection<Document> historial) {
         createDocument();
     }
 

@@ -30,7 +30,7 @@ public class LoginController implements Initializable {
 	private Label login_error;
 	
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {	
+	public void initialize(URL arg0, ResourceBundle arg1) {
 		EventHandler<KeyEvent> enterClick = new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent event) {
@@ -59,7 +59,7 @@ public class LoginController implements Initializable {
 			loginError();
 		}
 		*/
-		
+
 		//PARA TESTEAR SALTO EL LOGIN
 		user = "jcsalinas";
 		pass = "1234";

@@ -123,6 +123,10 @@ public class PacientesController implements Initializable {
         loadMedicamentosList();
     }
 
+    public void removeRowConsultas(int row) {
+        consultasTable.getItems().remove(row);
+    }
+
     private void loadConsultas() {
 
         ArrayList<TablaConsultas> tablaConsultas = new ArrayList<>();
@@ -144,7 +148,7 @@ public class PacientesController implements Initializable {
                 checkBox.setSelected(false);
             }
             num_consulta = consultaPos.getNum_consulta();
-            tablaConsultaPos = new TablaConsultas(id_consulta, num_consulta, row, hora, dia, notasPaciente, notasDoctor, checkBox);
+            tablaConsultaPos = new TablaConsultas(this, id_consulta, num_consulta, row, hora, dia, notasPaciente, notasDoctor, checkBox);
             tablaConsultas.add(tablaConsultaPos);
             row++;
         }

@@ -15,7 +15,7 @@ public class Main extends Application {
 		loadData(); //CARGO LOS DATOS DEL PROGRAMA
 		try {
 			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
-			Scene scene = new Scene(root,1280,720); //LE DOY DIMENSIONES DE 1280X720
+			Scene scene = new Scene(root,1000,800); //LE DOY DIMENSIONES DE 1000x600
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene); 
 			primaryStage.setResizable(false); //NO PERMITO QUE SE PUEDA MODIFICAR EL SIZE 

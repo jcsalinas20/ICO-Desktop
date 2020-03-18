@@ -4,17 +4,23 @@ import conexion.MongoActions;
 import interfaz.PacientesController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.DialogEvent;
+import programa.Constantes;
 import programa.Data;
 
 public class TablaConsultas {
 
+    private PacientesController controller;
     private TablaConsultas tabla;
     private int row, id_consulta, num_consulta;
     private String hora, dia, notasPaciente, notasDoctor;
     private CheckBox asistido;
 
-    public TablaConsultas(int id_consulta, int num_consulta, int row, String hora, String dia, String notasPaciente, String notasDoctor, CheckBox asistido) {
+    public TablaConsultas(PacientesController controller, int id_consulta, int num_consulta, int row, String hora, String dia, String notasPaciente, String notasDoctor, CheckBox asistido) {
+        this.controller = controller;
         this.id_consulta = id_consulta;
         this.num_consulta = num_consulta;
         this.row = row;
@@ -68,8 +74,20 @@ public class TablaConsultas {
         asistido.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Data.doctor.getPacientes().get(PacientesController.pacienteKey).getConsultas().get(row).setAsistido(asistido.isSelected());
-                new MongoActions().changeAsistido(tabla);
+                Alert a = new Alert(Alert.AlertType.CONFIRMATION, Constantes.ARCHIVAR_CONSULTA_CONFIRMATION);
+                a.show();
+                a.setOnHidden(new EventHandler<DialogEvent>() {
+                    @Override
+                    public void handle(DialogEvent event) {
+                        if (a.getResult() == ButtonType.OK) { //SI EL MEDICO CONFIRMA PROCEDO A BORRAR LA CONSULTA
+                            controller.removeRowConsultas(row);
+                            Data.doctor.getPacientes().get(PacientesController.pacienteKey).getConsultas().remove(row);
+                            new MongoActions().changeAsistido(tabla);
+                        } else {
+                            asistido.setSelected(false);
+                        }
+                    }
+                });
             }
         });
     }
