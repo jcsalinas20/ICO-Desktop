@@ -35,6 +35,14 @@ public class TablaConsultas {
         this.notasDoctor = notasDoctor;
     }
 
+    public int getId_consulta() {
+        return id_consulta;
+    }
+
+    public int getNum_consulta() {
+        return num_consulta;
+    }
+
     public String getHora() {
         return hora;
     }

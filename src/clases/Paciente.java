@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Paciente {
 
 	private int id_paciente, id_consultas;
-	private String nombre, apellidos, dni, foto, nacimiento;
+	private String nombre, apellidos, dni, foto, nacimiento, genero;
 	private ArrayList<Consulta> consultas;
 	private ArrayList<MedicamentoPaciente> medicinas;
 	private ArrayList<HistorialPaciente> historial;
 
-	public Paciente(int id_paciente, int id_consultas, ArrayList<HistorialPaciente> historial, String nombre, String apellidos, String dni, String foto, String nacimiento, ArrayList<Consulta> consultas, ArrayList<MedicamentoPaciente> medicinas) {
+	public Paciente(int id_paciente, int id_consultas, ArrayList<HistorialPaciente> historial, String nombre, String apellidos, String dni, String foto, String nacimiento, ArrayList<Consulta> consultas, ArrayList<MedicamentoPaciente> medicinas, String genero) {
 		this.id_paciente = id_paciente;
 		this.id_consultas = id_consultas;
 		this.historial = historial;
@@ -21,6 +21,7 @@ public class Paciente {
 		this.nacimiento = nacimiento;
 		this.consultas = consultas;
 		this.medicinas = medicinas;
+		this.genero = genero;
 	}
 
 	public int getId_consultas() {
@@ -49,6 +50,10 @@ public class Paciente {
 
 	public String getNacimiento() {
 		return nacimiento;
+	}
+
+	public String getGenero() {
+		return genero;
 	}
 
 	public ArrayList<HistorialPaciente> getHistorial() {

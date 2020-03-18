@@ -7,15 +7,15 @@ import com.mongodb.client.MongoDatabase;
 
 import clases.Doctor;
 import clases.Paciente;
+import conexion.MongoConnection;
 import javafx.stage.Stage;
 
 public class Data {
 	
-	public static MongoDatabase mongoDB;
+	public static MongoConnection mongoDB;
 
 	public static Doctor doctor;
 	public static HashMap<Integer, Medicamentos> medicamentos;
-	public static int total_consultas;
 	public static String direccionHospital;
 
 	public static Stage interfaz;

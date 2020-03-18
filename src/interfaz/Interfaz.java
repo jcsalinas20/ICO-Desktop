@@ -1,6 +1,5 @@
 package interfaz;
 
-import clases.Paciente;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,9 +32,6 @@ public class Interfaz {
 	public ImageView dashboard_image;
 
 	@FXML
-	public ImageView consultas_image;
-
-	@FXML
 	public ImageView pacientes_image;
 
 	public void loadInterface() {
@@ -48,7 +44,6 @@ public class Interfaz {
 			AnchorPane left_bar = (AnchorPane) toolbar_left.getItems().get(0);
 			dashboard_image = (ImageView) left_bar.getChildren().get(0);
 			pacientes_image = (ImageView) left_bar.getChildren().get(2);
-			consultas_image = (ImageView) left_bar.getChildren().get(4);
 
 			scene_panel = (AnchorPane) interfaz.getChildren().get(1); //RELACIONO EL ANCHOR PANE QUE IRA CAMBIANDO
 			AnchorPane top_bar = (AnchorPane) interfaz.getChildren().get(2);
@@ -75,29 +70,13 @@ public class Interfaz {
 			scene_panel.getChildren().add(root);
 			nombre_escena.setText(Constantes.DASHBOARD_SCENE);
 			dashboard_image.setOpacity(1);
-			consultas_image.setOpacity(0.44);
 			pacientes_image.setOpacity(0.44);
 		} catch (Exception e) {
 
 		}
 	}
 
-	//CARGA LA INTERFAZ DE CONSULTAS
-	public void loadConsultas() {
-		try {
-			root = loadPanel("Consultas.fxml");
-			removeAnchorChildren();
-			scene_panel.getChildren().add(root);
-			nombre_escena.setText(Constantes.CONSULTAS_SCENE);
-			consultas_image.setOpacity(1);
-			dashboard_image.setOpacity(0.44);
-			pacientes_image.setOpacity(0.44);
-		} catch (Exception e) {
-
-		}
-	}
-
-	//CARGA LA INTERFAZ DE CONSULTAS
+	//CARGA LA INTERFAZ DE BUSQUEDA DE PACIENTES
 	public void loadSearch() {
 		try {
 			root = loadPanel("Search.fxml");
@@ -105,19 +84,7 @@ public class Interfaz {
 			scene_panel.getChildren().add(root);
 			nombre_escena.setText(Constantes.SEARCH_SCENE);
 			pacientes_image.setOpacity(1);
-			consultas_image.setOpacity(0.44);
 			dashboard_image.setOpacity(0.44);
-		} catch(Exception e) {
-
-		}
-	}
-
-	public void loadPaciente(String screenTitle) {
-		try {
-			root = loadPanel("Pacientes.fxml");
-			removeAnchorChildren();
-			scene_panel.getChildren().add(root);
-			nombre_escena.setText(screenTitle);
 		} catch(Exception e) {
 
 		}

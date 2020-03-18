@@ -65,7 +65,7 @@ public class MongoLoadData {
 			int[] diasMedicamento;
 			ArrayList<String> horasMedicamento;
 			List<String> horaPosition;
-			String hora, dia, notasPaciente, notasDoctor, nombre, apellidos, dni, foto, nacimiento, hashKey, diaHistorial, notasDoctorHistorial;
+			String hora, dia, notasPaciente, notasDoctor, nombre, apellidos, dni, foto, nacimiento, genero, hashKey, diaHistorial, notasDoctorHistorial;
 			boolean asistido;
 			Consulta consultaPos;
 			ArrayList<Consulta> consultas;
@@ -91,6 +91,7 @@ public class MongoLoadData {
 				dni = buscarPacienteConsulta.getString(Constantes.MONGO_PACIENTES_DNI);
 				foto = buscarPacienteConsulta.getString(Constantes.MONGO_PACIENTES_FOTO);
 				nacimiento = buscarPacienteConsulta.getString(Constantes.MONGO_PACIENTES_NACIMIENTO);
+				genero = buscarPacienteConsulta.getString(Constantes.MONGO_PACIENTES_GENERO);
 
 					//BUSCO SU HISTORIAL DE MEDICINAS
 				historial = new ArrayList<>();
@@ -145,7 +146,7 @@ public class MongoLoadData {
 					consultas.add(consultaPos);
 				}
 
-				pacientePos = new Paciente(id_paciente, id_consulta_paciente, historial, nombre, apellidos, dni, foto, nacimiento, consultas, medicinas);
+				pacientePos = new Paciente(id_paciente, id_consulta_paciente, historial, nombre, apellidos, dni, foto, nacimiento, consultas, medicinas, genero);
 				hashKey = (nombre + apellidos).replaceAll(" ", "");
 				pacientesDoctor.put(hashKey, pacientePos);
 			}

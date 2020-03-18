@@ -25,11 +25,11 @@ public class Main extends Application {
 			
 		}
 	}
-	
+
 	private void loadData() {
 		new MongoConnection(); //CARGO LA BASE DE DATOS
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}

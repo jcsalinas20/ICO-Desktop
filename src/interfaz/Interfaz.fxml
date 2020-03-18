@@ -15,12 +15,12 @@
          <items>
             <AnchorPane>
                <children>
-                  <ImageView fx:id="dashboard_image" fitHeight="38.79" fitWidth="38.79" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="240.5">
+                  <ImageView fx:id="dashboard_image" fitHeight="38.79" fitWidth="38.79" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="270.5">
                      <image>
                         <Image url="file:/C:/Users/marcm/IdeaProjects/ICO-Desktop/images/home_dashboard.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" onAction="#loadDashboard" prefHeight="38.79" prefWidth="38.79" style="-fx-background-color: none;" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="240.5">
+                  <Button mnemonicParsing="false" onAction="#loadDashboard" prefHeight="38.79" prefWidth="38.79" style="-fx-background-color: none;" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="270.5">
                      <tooltip>
                         <Tooltip autoFix="false" text="Dashboard">
                            <font>
@@ -28,12 +28,12 @@
                            </font>
                         </Tooltip>
                      </tooltip></Button>
-                  <ImageView fx:id="pacientes_image" fitHeight="24.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="360.0">
+                  <ImageView fx:id="pacientes_image" fitHeight="24.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="400.0">
                      <image>
                         <Image url="file:/C:/Users/marcm/IdeaProjects/ICO-Desktop/images/pacientes_dashboard.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" onAction="#loadSearch" prefHeight="24.0" prefWidth="36.0" style="-fx-background-color: none;" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="360.0">
+                  <Button mnemonicParsing="false" onAction="#loadSearch" prefHeight="24.0" prefWidth="36.0" style="-fx-background-color: none;" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="400.0">
                      <tooltip>
                         <Tooltip text="Pacientes">
                            <font>
@@ -41,25 +41,12 @@
                            </font>
                         </Tooltip>
                      </tooltip></Button>
-                  <ImageView fx:id="consultas_image" fitHeight="38.39" fitWidth="34.56" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="460.0">
-                     <image>
-                        <Image url="file:/C:/Users/marcm/IdeaProjects/ICO-Desktop/images/consultas_dashboard.png" />
-                     </image>
-                  </ImageView>
-                  <Button mnemonicParsing="false" onAction="#loadConsultas" prefHeight="38.39" prefWidth="34.56" style="-fx-background-color: none;" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="460.0">
-                     <tooltip>
-                        <Tooltip text="Consultas">
-                           <font>
-                              <Font name="SansSerif Regular" size="18.0" />
-                           </font>
-                        </Tooltip>
-                     </tooltip></Button>
-                  <ImageView fitHeight="38.0" fitWidth="40.0" opacity="0.44" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="570.0">
+                  <ImageView fitHeight="38.0" fitWidth="40.0" opacity="0.44" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="515.0">
                      <image>
                         <Image url="file:/C:/Users/marcm/IdeaProjects/ICO-Desktop/images/logout_dashboard.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" onAction="#logout" prefHeight="38.0" prefWidth="40.0" style="-fx-background-color: none;" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="570.0">
+                  <Button mnemonicParsing="false" onAction="#logout" prefHeight="38.0" prefWidth="40.0" style="-fx-background-color: none;" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="515.0">
                      <tooltip>
                         <Tooltip text="Cerrar sesión">
                            <font>

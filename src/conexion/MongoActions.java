@@ -1,10 +1,7 @@
 package conexion;
 
-import clases.MedicamentoPaciente;
 import clases.TablaConsultas;
 import clases.TablaMedicamentos;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import org.bson.Document;
 
 import com.mongodb.client.FindIterable;
@@ -17,22 +14,12 @@ import programa.Data;
 
 public class MongoActions {
 
-	/*
-	 * FORMAS DE RECORRER DB
-	 * 
-	 * for (Document doc : fi) { System.out.println(doc.toJson());
-	 * 
-	 * } ----------------------------------------------------------
-	 * MongoCursor<Document> cursor = fi.iterator(); try { while(cursor.hasNext()) {
-	 * System.out.println(cursor.next().toJson()); } } finally { cursor.close(); }
-	 */
-
 	private MongoDatabase db;
 	private MongoCollection<Document> doctores;
 	private Document doctor;
 
 	public MongoActions() {
-		this.db = Data.mongoDB;
+		this.db = Data.mongoDB.getDB();
 		doctores = db.getCollection(Constantes.MONGO_DOCTOR_COLLECTION);
 	}
 
@@ -47,7 +34,7 @@ public class MongoActions {
 			doctor = fi.first();
 			String dbPassword = doctor.getString(Constantes.MONGO_DOCTORES_PASSWORD); //COJO LA PASSWORD EXISTENTE EN LA DB
 			password = new Md5(password).encrypt(); //ENCRIPTO LA CONTRASE�A CON MD5
-			
+
 			//COMPRUEBO QUE LA PASSWORD COINCIDA
 			if(password.equals(dbPassword)) {
 				return true;
@@ -75,33 +62,40 @@ public class MongoActions {
 	}
 
 	public void removeMedicamento(int id_paciente, int id_medicamento) {
-		MongoCollection<Document> pacientes = db.getCollection(Constantes.MONGO_PACIENTES_COLLECTION);
-		new MongoMedicamentos().eliminarMedicamento(id_paciente, id_medicamento);
+		new MongoMedicamentos(getcollectionPacientes()).eliminarMedicamento(id_paciente, id_medicamento);
 	}
 
 	public void editHorasMedicamento(int id_paciente, int id_medicamento, String horas) {
-		MongoCollection<Document> medicamentos = db.getCollection(Constantes.MONGO_MEDICAMENTOS_COLLECTION);
-		MongoCollection<Document> pacientes = db.getCollection(Constantes.MONGO_PACIENTES_COLLECTION);
-		new MongoMedicamentos().editarHorasMedicamento(id_paciente, id_medicamento, horas);
+		new MongoMedicamentos(getcollectionPacientes()).editarHorasMedicamento(id_paciente, id_medicamento, horas);
 	}
 
 	public void addMedicamento(TablaMedicamentos nuevoMedicamento) {
-
+		new MongoMedicamentos(getcollectionPacientes()).addMedicamento(nuevoMedicamento);
 	}
 
-	public void editMedicamentoDay(TablaMedicamentos data, String day, int nuevo_valor) {
+	public void editMedicamentoDay(TablaMedicamentos data) {
+		new MongoMedicamentos(getcollectionPacientes()).editDayMedicamento(data);
+	}
 
+	private MongoCollection<Document> getcollectionPacientes() {
+		MongoCollection<Document> pacientes = db.getCollection(Constantes.MONGO_PACIENTES_COLLECTION);
+		return pacientes;
+	}
+
+	private MongoCollection<Document> getCollectionConsultas() {
+		MongoCollection<Document> consultas = db.getCollection(Constantes.MONGO_CONSULTAS_COLLECTION);
+		return consultas;
 	}
 
 	public void changeAsistido(TablaConsultas data) {
-
+		new MongoConsultas(getCollectionConsultas(), data).changeAsistido();
 	}
 
 	public void changeNotasPaciente(TablaConsultas data) {
-
+		new MongoConsultas(getCollectionConsultas(), data).createDocument();
 	}
 
 	public void changeNotasDoctor(TablaConsultas data) {
-
+		new MongoConsultas(getCollectionConsultas(), data).createDocument();
 	}
 }

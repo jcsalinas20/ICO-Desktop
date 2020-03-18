@@ -3,7 +3,7 @@ package programa;
 public class Constantes {
 	
 	//DATOS DE CONEXION PARA MONGO DB
-	public static String MONGO_CONNECTION_STRING = "mongodb+srv://admin:admin@clustersalinas-hvex2.mongodb.net/DB_ICO?retryWrites=true&w=majority\r\n";
+	public static String MONGO_CONNECTION_STRING = "mongodb+srv://admin:admin@clustersalinas-hvex2.mongodb.net/DB_ICO?retryWrites=true&w=majority";
 	public static String MONGO_DATABASE_NAME = "DB_ICO";
 	
 	//COLECCIONES DE LA BASE DE DATOS
@@ -55,11 +55,13 @@ public class Constantes {
 	public static String MONGO_PACIENTES_NACIMIENTO = "fecha_nacimiento";
 	public static String MONGO_PACIENTES_FOTO = "foto";
 	public static String MONGO_PACIENTES_MEDICAMENTOS = "medicamentos";
+	public static String MONGO_PACIENTES_GENERO = "genero";
 
 	//CAMPOS DEL ARRAY MEDICAMENTOS PERTENECIENTE A PACIENTES
 	public static String MONGO_MEDICAMENTO_ID = "id";
 	public static String MONGO_MEDICAMENTO_DIAS = "dias";
 	public static String MONGO_MEDICAMENTO_HORAS = "hora";
+	public static String MONGO_MEDICAMENTO_PASTILLAS = "pastillaTomada";
 	
 	//CAMPOS DEL OBJETO DIAS
 	public static String MONGO_DIA_LUNES = "lunes";

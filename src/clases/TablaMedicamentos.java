@@ -33,6 +33,22 @@ public class TablaMedicamentos {
         listenerCheckbox();
     }
 
+    public TablaMedicamentos getData() {
+        return data;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public int getId_paciente() {
+        return id_paciente;
+    }
+
+    public int getId_medicamento() {
+        return id_medicamento;
+    }
+
     public void setHoras(String horas) {
         this.horas = horas;
     }
@@ -79,50 +95,42 @@ public class TablaMedicamentos {
             @Override
             public void handle(ActionEvent event) {
                 Object eventoClick = event.getSource();
-                String day = null;
                 int nuevoValor = -1;
                 boolean selected = false;
                 int[] dias = Data.doctor.getPacientes().get(PacientesController.pacienteKey).getMedicinas().get(row).getDias();
 
                 if(eventoClick == lunes) {
-                    day = Constantes.MONGO_DIA_LUNES;
                     selected = lunes.isSelected();
                     nuevoValor = getNuevoValor(selected);
                     dias[0] = nuevoValor;
                 } else if (eventoClick == martes) {
-                    day = Constantes.MONGO_DIA_MARTES;
                     selected = martes.isSelected();
                     nuevoValor = getNuevoValor(selected);
                     dias[1] = nuevoValor;
                 } else if (eventoClick == miercoles) {
-                    day = Constantes.MONGO_DIA_MIERCOLES;
                     selected = miercoles.isSelected();
                     nuevoValor = getNuevoValor(selected);
                     dias[2] = nuevoValor;
                 } else if (eventoClick == jueves) {
-                    day = Constantes.MONGO_DIA_JUEVES;
                     selected = jueves.isSelected();
                     nuevoValor = getNuevoValor(selected);
                     dias[3] = nuevoValor;
                 } else if (eventoClick == viernes) {
-                    day = Constantes.MONGO_DIA_VIERNES;
                     selected = viernes.isSelected();
                     nuevoValor = getNuevoValor(selected);
                     dias[4] = nuevoValor;
                 } else if (eventoClick == sabado) {
-                    day = Constantes.MONGO_DIA_SABADO;
                     selected = sabado.isSelected();
                     nuevoValor = getNuevoValor(selected);
                     dias[5] = nuevoValor;
                 } else if (eventoClick == domingo) {
-                    day = Constantes.MONGO_DIA_DOMINGO;
                     selected = domingo.isSelected();
                     nuevoValor = getNuevoValor(selected);
                     dias[6] = nuevoValor;
                 }
 
                 Data.doctor.getPacientes().get(PacientesController.pacienteKey).getMedicinas().get(row).setDias(dias);
-                new MongoActions().editMedicamentoDay(data, day, nuevoValor);
+                new MongoActions().editMedicamentoDay(data);
             }
         };
 
