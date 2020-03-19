@@ -28,4 +28,10 @@ public class CrearAlertas {
 		alert.show();
 	}
 
+	//NO PUEDES ARCHIVAR UN PACIENTE UN DIA QUE NO TIENES CONSULTA CON HOY
+	public static void archivarPacienteNoPermitido() {
+		Alert alert = new Alert(Alert.AlertType.INFORMATION, Constantes.ARCHIVAR_CONSULTA_NOPERMITIDO);
+		alert.show();
+	}
+
 }

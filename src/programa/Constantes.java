@@ -73,7 +73,12 @@ public class Constantes {
 	public static String MONGO_DIA_DOMINGO = "domingo";
 
 	//CAMPOS DE LA COLLECTION DE HISTORIAL
+	public static String MONGO_HISTORIAL_ID = "id_consulta";
 	public static String MONGO_HISTORIAL_PACIENTEID = "id_paciente";
+	public static String MONGO_HISTORIAL_HOSPITAL = "id_direccion";
+	public static String MONGO_HISTORIAL_DOCTOR = "doctor";
+	public static String MONGO_HISTORIAL_PLANTA = "planta";
+	public static String MONGO_HISTORIAL_SALA = "sala";
 	public static String MONGO_HISTORIAL_CONSULTAS = "consultas";
 
 	//CAMPOS DEL ARRAY DE CONSULTAS DE HISTORIAL
@@ -96,4 +101,7 @@ public class Constantes {
 	public static String ELIMINAR_MEDICAMENTO_CONFIRMATION = "¿Estás seguro de eliminar este medicamento?";
 	public static String DASHBOARD_EDIT_CONFIRMATION = "¿Seguro que quieres atender a este paciente?";
 	public static String ARCHIVAR_CONSULTA_CONFIRMATION = "¿Seguro que quieres marcar la consulta como realizada? La información se archivará.";
+
+	//TEXTO DE ERROR AL INTENTAR ARCHIVAR LA CONSULTA DE UN PACIENTE UN DIA QUE NO TIENE VISITA
+	public static String ARCHIVAR_CONSULTA_NOPERMITIDO = "No puedes archivar una consulta que todavía no se ha realizado.";
 }

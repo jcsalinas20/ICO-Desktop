@@ -87,9 +87,9 @@ public class MongoActions {
 		return consultas;
 	}
 
-	public void changeAsistido(TablaConsultas data) {
+	public void changeAsistido(TablaConsultas data, int id_paciente) {
 		MongoCollection<Document> historial = db.getCollection(Constantes.MONGO_HISTORIAL_COLLECTION);
-		new MongoConsultas(getCollectionConsultas(), data).changeAsistido(historial);
+		new MongoConsultas(getCollectionConsultas(), data).changeAsistido(historial, id_paciente);
 	}
 
 	public void changeNotasPaciente(TablaConsultas data) {

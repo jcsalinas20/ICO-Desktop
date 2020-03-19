@@ -12,8 +12,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 import javafx.util.Callback;
 import programa.Constantes;
 import programa.CrearAlertas;
@@ -102,13 +104,20 @@ public class PacientesController implements Initializable {
     @FXML
     private ListView listaNotas;
 
+    @FXML
+    private TextField buscarNotas;
+
     private int medicamentoPosList;
 
     private ArrayList<Integer> horasMedicamentosArray;
 
+    private ArrayList<HistorialPaciente> historialPacienteLista;
+
+    private ObservableList<AnchorPane> lista;
+
     private ArrayList<Integer> medicamentoOrder;
 
-    private Paciente paciente;
+    public Paciente paciente;
 
     public static String pacienteKey;
 
@@ -335,17 +344,28 @@ public class PacientesController implements Initializable {
         Label nombre;
         HashMap<Integer, Medicamentos> medicamentos = Data.medicamentos;
         Medicamentos medicamentoPos;
+        int contador = 0;
+        Font font = new Font("Corbel", 18); //CREO LA FUENTE
         for(Map.Entry<Integer, Medicamentos> entry : medicamentos.entrySet()) {
             medicamentoPos = entry.getValue(); //RECORRO EL MAPA RECOGIENDO LOS MEDICAMENTOS
             nombre = new Label(medicamentoPos.getNombre());
-            nombre.setLayoutX(100);
+            nombre.setStyle("-fx-text-fill: white;");
+            nombre.setFont(font);
+            nombre.setLayoutX(120);
             nombre.setLayoutY(32);
             imagenMedicamentoPos = new Image(medicamentoPos.getImagen());
             imagen.setImage(imagenMedicamentoPos);
-            imagen.setX(5);
-            imagen.setFitHeight(80);
-            imagen.setFitWidth(80);
+            imagen.setX(20);
+            imagen.setY(12);
+            imagen.setFitHeight(70);
+            imagen.setFitWidth(70);
             anchor = new AnchorPane(imagen, nombre);
+            if(contador%2 == 0) {
+                anchor.setStyle("-fx-background-color: rgba(102, 114, 251, 0.75); -fx-background-radius: 10;");
+            } else {
+                anchor.setStyle("-fx-background-color: rgba(102, 114, 251, 0.60); -fx-background-radius: 10;");
+            }
+            contador++;
             anchorList.add(anchor);
             medicamentoOrder.add(entry.getKey());
         }
@@ -458,12 +478,42 @@ public class PacientesController implements Initializable {
     }
 
     private void loadListaNotas() {
-        ArrayList<HistorialPaciente> historial = paciente.getHistorial();
+        historialPacienteLista = paciente.getHistorial();
         ArrayList<AnchorPane> anchorList = new ArrayList<>();
-        for(HistorialPaciente pos : historial) {
-            anchorList.add(pos.getData());
+        int contadorLista = 0;
+        for(HistorialPaciente pos : historialPacienteLista) {
+            anchorList.add(pos.getData(contadorLista));
+            contadorLista++;
         }
-        ObservableList<AnchorPane> lista = FXCollections.observableArrayList(anchorList);
+        lista = FXCollections.observableArrayList(anchorList);
         listaNotas.setItems(lista);
+
+        //FILTRO LAS NOTAS POR DIA
+        buscarNotas.setOnKeyReleased(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                //BORRO LAS NOTAS
+                lista.removeAll();
+                listaNotas.setItems(lista);
+
+                //BUSCO LAS NOTAS QUE COINCIDAN CON LA BUSQUEDA
+                String fecha = buscarNotas.getText().replaceAll("[^0-9]", ""); //REMPLAZO TODO LO QUE NO SEAN NUMEROS
+                String fechaComparacion;
+                HistorialPaciente pos;
+                ArrayList<AnchorPane> historialPacientesFiltro = new ArrayList<>();
+                int contador = 0;
+                for(int i = 0; i < historialPacienteLista.size(); i++) {
+                    pos = historialPacienteLista.get(i);
+                    fechaComparacion = pos.getFecha().replaceAll("[^0-9]", ""); //REMPLAZO TODO LO QUE NO SEAN NUMEROS
+                    if(fecha.equals(fechaComparacion) || fechaComparacion.contains(fecha)) {
+                        historialPacientesFiltro.add(pos.getData(contador));
+                        contador++;
+                    }
+                }
+
+                lista = FXCollections.observableArrayList(historialPacientesFiltro);
+                listaNotas.setItems(lista);
+            }
+        });
     }
 }

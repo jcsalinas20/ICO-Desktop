@@ -4,12 +4,20 @@ import java.util.HashMap;
 
 public class Doctor {
 
-	String nombre, apellidos;
-	private int id_doctor, planta, numero_sala;
-	HashMap<String, Paciente> pacientes;
+	private String nombre, apellidos;
+	private int id_doctor, id_hospital, planta, numero_sala;
+	private HashMap<String, Paciente> pacientes;
 	
 	public Doctor() {
 		
+	}
+
+	public int getId_hospital() {
+		return id_hospital;
+	}
+
+	public void setId_hospital(int id_hospital) {
+		this.id_hospital = id_hospital;
 	}
 
 	public int getId_doctor() {

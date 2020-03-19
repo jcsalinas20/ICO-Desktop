@@ -39,12 +39,9 @@ public class MongoLoadData {
 			int numero_sala = doctor.getInteger(Constantes.MONGO_DOCTORES_SALA);
 			doc.setNumero_sala(numero_sala);
 
-			//RECOJO LA DIRECCIÓN DEL HOSPITAL
+			//RECOJO LA ID DEL HOSPITAL
 			int id_hospital = doctor.getInteger(Constantes.MONGO_DOCTORES_HOSPITAL);
-			Document buscarHospital = new Document(Constantes.MONGO_HOSPITAL_ID, id_hospital);
-			FindIterable<Document> fi = hospitales.find(buscarHospital);
-			buscarHospital = fi.first();
-			Data.direccionHospital = buscarHospital.getString(Constantes.MONGO_HOSPITAL_DIRECCION);
+			doc.setId_hospital(id_hospital);
 		}
 
 		public void loadConsultas(MongoCollection<Document> consultasCollection, MongoCollection<Document> pacientesCollection, MongoCollection<Document> historialCollection) {
@@ -66,7 +63,6 @@ public class MongoLoadData {
 			ArrayList<String> horasMedicamento;
 			List<String> horaPosition;
 			String hora, dia, notasPaciente, notasDoctor, nombre, apellidos, dni, foto, nacimiento, genero, hashKey, diaHistorial, notasDoctorHistorial;
-			boolean asistido;
 			Consulta consultaPos;
 			ArrayList<Consulta> consultas;
 			ArrayList<MedicamentoPaciente> medicinas;
@@ -140,9 +136,8 @@ public class MongoLoadData {
 					dia = consultaDocument.getString(Constantes.MONGO_CONSULTA_DIA);
 					notasDoctor = consultaDocument.getString(Constantes.MONGO_CONSULTA_NOTASDOCTOR);
 					notasPaciente = consultaDocument.getString(Constantes.MONGO_CONSULTA_NOTASPACIENTE);
-					asistido = consultaDocument.getBoolean(Constantes.MONGO_CONSULTA_ASISTENCIA);
 					id_consulta = consultaDocument.getInteger(Constantes.MONGO_CONSULTA_ID);
-					consultaPos = new Consulta(id_consulta, hora, dia, notasPaciente, notasDoctor, asistido);
+					consultaPos = new Consulta(id_consulta, hora, dia, notasPaciente, notasDoctor, false);
 					consultas.add(consultaPos);
 				}
 

@@ -115,9 +115,9 @@ public class DashboardController implements Initializable  {
                 //LE APLICO ESTILO AL ANCHOR
                 posicion.setMinHeight(50);
                 if(contador % 2 == 0) {
-                    posicion.setStyle("-fx-background-color: rgba(44, 128, 239, 0.8); -fx-background-radius: 10");
+                    posicion.setStyle("-fx-background-color: rgba(44, 128, 239, 0.8); -fx-background-radius: 10;");
                 } else {
-                    posicion.setStyle("-fx-background-color: rgba(44, 128, 239, 0.5); -fx-background-radius: 10");
+                    posicion.setStyle("-fx-background-color: rgba(44, 128, 239, 0.5); -fx-background-radius: 10;");
                 }
 
                 posicion.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -184,17 +184,7 @@ public class DashboardController implements Initializable  {
         pacientesAsignados = pacientes.size(); //NUMERO DE PACIENTES ASIGNADOS
 
         //COJO LA FECHA ACTUAL
-        Calendar calendario = new GregorianCalendar();
-        int dia = calendario.get(Calendar.DATE);
-        int mes = calendario.get(Calendar.MONTH) + 1; //LE SUMO UNO PORQUE EMPIEZA A CONTAR DESDE 0
-        int any = calendario.get(Calendar.YEAR);
-        String fechaActual;
-
-        if(mes < 10) { //GUARDO EL VALOR DE LA FECHA ACTUAL
-            fechaActual = dia + "-0" + mes + "-" + any;
-        } else {
-            fechaActual = dia + "-" + mes + "-" + any;
-        }
+        String fechaActual = Data.getFecha();
 
         HashMap<Integer, DashboardList> mapaConsultas = new HashMap<>();
         consultasPending = 0;

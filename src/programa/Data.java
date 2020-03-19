@@ -1,5 +1,7 @@
 package programa;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 import clases.Medicamentos;
@@ -16,7 +18,21 @@ public class Data {
 
 	public static Doctor doctor;
 	public static HashMap<Integer, Medicamentos> medicamentos;
-	public static String direccionHospital;
 
 	public static Stage interfaz;
+
+	public static String getFecha() {
+		Calendar calendario = new GregorianCalendar();
+		int dia = calendario.get(Calendar.DATE);
+		int mes = calendario.get(Calendar.MONTH) + 1; //LE SUMO UNO PORQUE EMPIEZA A CONTAR DESDE 0
+		int any = calendario.get(Calendar.YEAR);
+		String fechaActual;
+
+		if(mes < 10) { //GUARDO EL VALOR DE LA FECHA ACTUAL
+			fechaActual = dia + "-0" + mes + "-" + any;
+		} else {
+			fechaActual = dia + "-" + mes + "-" + any;
+		}
+		return fechaActual;
+	}
 }

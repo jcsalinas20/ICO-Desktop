@@ -9,7 +9,11 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DialogEvent;
 import programa.Constantes;
+import programa.CrearAlertas;
 import programa.Data;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 public class TablaConsultas {
 
@@ -74,20 +78,24 @@ public class TablaConsultas {
         asistido.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                Alert a = new Alert(Alert.AlertType.CONFIRMATION, Constantes.ARCHIVAR_CONSULTA_CONFIRMATION);
-                a.show();
-                a.setOnHidden(new EventHandler<DialogEvent>() {
-                    @Override
-                    public void handle(DialogEvent event) {
-                        if (a.getResult() == ButtonType.OK) { //SI EL MEDICO CONFIRMA PROCEDO A BORRAR LA CONSULTA
-                            controller.removeRowConsultas(row);
-                            Data.doctor.getPacientes().get(PacientesController.pacienteKey).getConsultas().remove(row);
-                            new MongoActions().changeAsistido(tabla);
-                        } else {
-                            asistido.setSelected(false);
+                if(Data.getFecha().equals(dia)) { //COMPRUEBO SI ES UN DIA EN QUE EL DOCTOR TENGA CONSULTA CON ESTE PACIENTE
+                    Alert a = new Alert(Alert.AlertType.CONFIRMATION, Constantes.ARCHIVAR_CONSULTA_CONFIRMATION);
+                    a.show();
+                    a.setOnHidden(new EventHandler<DialogEvent>() {
+                        @Override
+                        public void handle(DialogEvent event) {
+                            if (a.getResult() == ButtonType.OK) { //SI EL MEDICO CONFIRMA PROCEDO A BORRAR LA CONSULTA
+                                controller.removeRowConsultas(row);
+                                Data.doctor.getPacientes().get(PacientesController.pacienteKey).getConsultas().remove(row);
+                                new MongoActions().changeAsistido(tabla, controller.paciente.getId_paciente());
+                            } else {
+                                asistido.setSelected(false);
+                            }
                         }
-                    }
-                });
+                    });
+                } else {
+                    CrearAlertas.archivarPacienteNoPermitido();
+                }
             }
         });
     }
