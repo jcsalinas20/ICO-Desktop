@@ -23,6 +23,8 @@ public class Constantes {
 	public static String MONGO_DOCTORES_PLANTA = "planta";
 	public static String MONGO_DOCTORES_SALA = "sala";
 	public static String MONGO_DOCTORES_HOSPITAL = "id_hospital";
+	public static String MONGO_DOCTORES_HORARIOS = "horarios";
+	public static String MONGO_DOCTORES_DIAS = "dias";
 
 	//CAMPOS DE LA COLLECTION HOSPITAL
 	public static String MONGO_HOSPITAL_ID = "id_hospital";
@@ -90,7 +92,6 @@ public class Constantes {
 
 	//NOMBRE DE LAS ESCENAS
 	public static String DASHBOARD_SCENE = "Dashboard";
-	public static String SEARCH_SCENE = "Pacientes";
 
 	//TEXTOS DE ERROR AL MODIFICAR DATOS DEL PACIENTE
 	public static String MEDICAMENTO_EDIT_ERROR = "El formato de horas no era el correcto. Introduce las horas con el siguiente formato 00:00 separadas por punto y coma.";

@@ -17,6 +17,7 @@ public class Data {
 	public static MongoConnection mongoDB;
 
 	public static Doctor doctor;
+	public static boolean catalan;
 	public static HashMap<Integer, Medicamentos> medicamentos;
 
 	public static Stage interfaz;

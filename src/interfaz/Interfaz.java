@@ -13,8 +13,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import programa.Constantes;
 import programa.Data;
+import traducciones.UTF8Control;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 public class Interfaz {
 		
@@ -58,7 +60,7 @@ public class Interfaz {
 			Data.interfaz = interfaz_load;
 			Data.interfaz.show();
 		} catch(Exception e) {
-			e.printStackTrace();
+
 		}
 	}
 
@@ -82,7 +84,13 @@ public class Interfaz {
 			root = loadPanel("Search.fxml");
 			removeAnchorChildren();
 			scene_panel.getChildren().add(root);
-			nombre_escena.setText(Constantes.SEARCH_SCENE);
+			String nombreEscena;
+			if(Data.catalan) {
+				nombreEscena = "Pacients";
+			} else {
+				nombreEscena = "Pacientes";
+			}
+			nombre_escena.setText(nombreEscena);
 			pacientes_image.setOpacity(1);
 			dashboard_image.setOpacity(0.44);
 		} catch(Exception e) {
@@ -90,9 +98,16 @@ public class Interfaz {
 		}
 	}
 
+	public void cambiarIdioma() {
+		Data.catalan = !Data.catalan;
+		Data.interfaz.close(); //CIERRO LA ESCENA ACTUAL
+		new Interfaz().loadInterface(); //CARGO LA INTERFAZ
+	}
+
 	//CIERRA EL PROGRAMA
 	public void logout() {
 		Data.interfaz.close();
+		System.exit(0);
 	}
 	
 	//BORRA LOS HIJOS DEL ANCHOR PANE PARA CAMBIAR EL CONTENIDO
@@ -105,6 +120,12 @@ public class Interfaz {
 
 	//BUSCA EL ARCHIVO FXL
 	private AnchorPane loadPanel(String nombreFXML) throws IOException {
-		return (AnchorPane) FXMLLoader.load(getClass().getResource(nombreFXML));
+		ResourceBundle resourceBundle;
+		if(Data.catalan) {
+			resourceBundle = ResourceBundle.getBundle("traducciones/texto_cat", new UTF8Control());
+		} else {
+			resourceBundle = ResourceBundle.getBundle("traducciones/texto", new UTF8Control());
+		}
+		return (AnchorPane) FXMLLoader.load(getClass().getResource(nombreFXML), resourceBundle);
 	}
 }

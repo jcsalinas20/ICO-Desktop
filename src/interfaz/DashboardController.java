@@ -19,6 +19,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import programa.Constantes;
 import programa.Data;
+import traducciones.UTF8Control;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -79,7 +80,13 @@ public class DashboardController implements Initializable  {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        nombre_doctor.setText("¡HOLA " + Data.doctor.getNombre().toUpperCase() + "!");
+        String hola;
+        if(Data.catalan) {
+            hola = "HOLA ";
+        } else {
+            hola = "�HOLA ";
+        }
+        nombre_doctor.setText(hola + Data.doctor.getNombre().toUpperCase() + "!");
         calcularDatos();
         cargarListaConsultas();
     }
@@ -139,7 +146,13 @@ public class DashboardController implements Initializable  {
                 anchorList.add(posicion);
             } else {
                 pacienteAtender = pos.getPaciente();
-                siguienteConsulta.setText("Tu próximo paciente es " + pacienteAtender.getNombre() + " " + pacienteAtender.getApellidos()); //LE DIGO AL DOCTOR EL NOMBRE DE SU PROXIMO PACIENTE
+                String proximoPaciente;
+                if(Data.catalan) {
+                    proximoPaciente = "El teu pròxim pacient és ";
+                } else {
+                    proximoPaciente = "Tu próximo paciente es ";
+                }
+                siguienteConsulta.setText(proximoPaciente + pacienteAtender.getNombre() + " " + pacienteAtender.getApellidos()); //LE DIGO AL DOCTOR EL NOMBRE DE SU PROXIMO PACIENTE
 
                 //AÑADO UN LISTENER AL BUTTON DE ATENDER
                 atenderConsulta.setOnAction(new EventHandler<ActionEvent>() {
@@ -161,7 +174,13 @@ public class DashboardController implements Initializable  {
             SearchController.pacienteSeleccionado = p;
             AnchorPane root;
             AnchorPane scene_panel = Interfaz.scene_panel;
-            root = (AnchorPane) FXMLLoader.load(getClass().getResource("Pacientes.fxml"));
+            ResourceBundle resourceBundle;
+            if(Data.catalan) {
+                resourceBundle = ResourceBundle.getBundle("traducciones/texto_cat", new UTF8Control());
+            } else {
+                resourceBundle = ResourceBundle.getBundle("traducciones/texto", new UTF8Control());
+            }
+            root = (AnchorPane) FXMLLoader.load(getClass().getResource("Pacientes.fxml"), resourceBundle);
 
             ObservableList<Node> panelHijos = scene_panel.getChildren();
             if(panelHijos.size() > 0) {
@@ -223,10 +242,28 @@ public class DashboardController implements Initializable  {
         pacientes_asignados.setText(Integer.toString(pacientesAsignados));
         consultas_pendientes.setText(Integer.toString(consultasPending));
         medicamentos_recetados.setText(Integer.toString(medicamentosRecetados));
-        if(consultasHoy != 1) {
-            info_doctor_text.setText("Tienes " + consultasHoy + " consultas pendientes hoy.");
+        String tienes;
+        if(Data.catalan) {
+            tienes = "Tens ";
         } else {
-            info_doctor_text.setText("Tienes " + consultasHoy + " consulta pendiente hoy.");
+            tienes = "Tienes ";
+        }
+        if(consultasHoy != 1) {
+            String consultasHoyText;
+            if(Data.catalan) {
+                consultasHoyText = " consultes pendents avui.";
+            } else {
+                consultasHoyText = " consultas pendientes hoy.";
+            }
+            info_doctor_text.setText(tienes + consultasHoy + consultasHoyText);
+        } else {
+            String consultasHoyText;
+            if(Data.catalan) {
+                consultasHoyText = " consulta pendent avui.";
+            } else {
+                consultasHoyText = " consulta pendiente hoy.";
+            }
+            info_doctor_text.setText(tienes + consultasHoy + consultasHoyText);
         }
         cargarGraficoGenero(); //CARGO EL GRAFICO DE GENERO
         cargarGraficoEdad(); //CARGO EL GRAFICO DE LAS EDADES
@@ -253,9 +290,17 @@ public class DashboardController implements Initializable  {
 
     private void cargarGraficoGenero() {
         //AÑADO LOS ELEMENTOS
+        String hombresText, mujeresText;
+        if(!Data.catalan) {
+            hombresText = "Hombres";
+            mujeresText = "Mujeres";
+        } else {
+            hombresText = "Homes";
+            mujeresText = "Dones";
+        }
         ObservableList<PieChart.Data> valueList = FXCollections.observableArrayList(
-                new PieChart.Data("Hombres", hombres),
-                new PieChart.Data("Mujeres", mujeres));
+                new PieChart.Data(hombresText, hombres),
+                new PieChart.Data(mujeresText, mujeres));
         graficoGenero.setData(valueList);
 
         //CALCULO EL PORCENTAJE Y LO AÑADO COMO TOOLTIP

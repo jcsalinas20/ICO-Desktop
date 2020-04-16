@@ -2,27 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62efaae7-a70f-48da-bb2b-5e638ccbd8c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/interfaz/MedicamentoList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaz/TabPane.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaz/menubutton.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/traducciones/UTF8Control.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/traducciones/texto.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/traducciones/texto_cat.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/clases/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/clases/Doctor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/conexion/MongoActions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/conexion/MongoActions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/conexion/MongoLoadData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/conexion/MongoLoadData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/init/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/init/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/init/LoginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/init/LoginScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/init/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/init/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/interfaz/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/interfaz/Dashboard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/interfaz/DashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/interfaz/DashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/interfaz/Interfaz.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/interfaz/Interfaz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/interfaz/Interfaz.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/interfaz/Interfaz.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/interfaz/Search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/interfaz/Search.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/interfaz/SearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/interfaz/SearchController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/programa/Constantes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/programa/Constantes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/programa/CrearAlertas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/programa/CrearAlertas.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ICO-Desktop-master/programa/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICO-Desktop-master/programa/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clases/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clases/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clases/HistorialPaciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clases/HistorialPaciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clases/TablaConsultas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clases/TablaConsultas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/conexion/MongoActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conexion/MongoActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conexion/MongoConsultas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conexion/MongoConsultas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conexion/MongoLoadData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conexion/MongoLoadData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/init/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/init/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/init/LoginScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/init/LoginScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/init/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/init/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaz/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaz/Dashboard.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interfaz/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaz/DashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaz/Interfaz.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaz/Interfaz.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaz/Interfaz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaz/Interfaz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interfaz/Pacientes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaz/Pacientes.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaz/PacientesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaz/PacientesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaz/Search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaz/Search.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaz/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaz/SearchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/programa/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/programa/Constantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/programa/CrearAlertas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/programa/CrearAlertas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/programa/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/programa/Data.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +126,16 @@
       <workItem from="1584532590512" duration="5141000" />
       <workItem from="1584551572772" duration="13205000" />
       <workItem from="1584614182356" duration="12390000" />
-      <workItem from="1584636586168" duration="7099000" />
+      <workItem from="1584636586168" duration="7600000" />
+      <workItem from="1584965969052" duration="2000" />
+      <workItem from="1585320818370" duration="279000" />
+      <workItem from="1585657752451" duration="1296000" />
+      <workItem from="1585675235843" duration="27000" />
+      <workItem from="1585751272999" duration="2000" />
+      <workItem from="1586261431814" duration="4528000" />
+      <workItem from="1586267577166" duration="4281000" />
+      <workItem from="1586276834930" duration="28000" />
+      <workItem from="1586873921299" duration="366000" />
     </task>
     <task id="LOCAL-00001" summary="Boton de logout y alternanza de interfaces.">
       <created>1583674312423</created>
@@ -169,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584562220055</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Interfaz de pacientes">
+      <created>1584643981924</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1584643981924</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +207,8 @@
     <MESSAGE value="Terminada la interfaz de pacientes" />
     <MESSAGE value="Dashboard y actualización de datos en la base de datos" />
     <MESSAGE value="Interfaz de dashboard y login." />
-    <option name="LAST_COMMIT_MESSAGE" value="Interfaz de dashboard y login." />
+    <MESSAGE value="Interfaz de pacientes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Interfaz de pacientes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Project_Structure" timestamp="1584215485093">
@@ -202,54 +227,54 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583603892291" />
-    <state x="560" y="114" key="CommitChangelistDialog2" timestamp="1584562219614">
+    <state x="560" y="114" key="CommitChangelistDialog2" timestamp="1584643981425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="560" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584562219614" />
+    <state x="560" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584643981425" />
     <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1584180710626">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584180710626" />
-    <state width="1877" height="254" key="GridCell.Tab.0.bottom" timestamp="1584643786011">
+    <state width="1877" height="254" key="GridCell.Tab.0.bottom" timestamp="1586874286637">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584643786011" />
-    <state width="1877" height="254" key="GridCell.Tab.0.center" timestamp="1584643786011">
+    <state width="1877" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586874286637" />
+    <state width="1877" height="254" key="GridCell.Tab.0.center" timestamp="1586874286637">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584643786011" />
-    <state width="1877" height="254" key="GridCell.Tab.0.left" timestamp="1584643786011">
+    <state width="1877" height="254" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586874286637" />
+    <state width="1877" height="254" key="GridCell.Tab.0.left" timestamp="1586874286637">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584643786011" />
-    <state width="1877" height="254" key="GridCell.Tab.0.right" timestamp="1584643786011">
+    <state width="1877" height="254" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586874286637" />
+    <state width="1877" height="254" key="GridCell.Tab.0.right" timestamp="1586874286637">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584643786011" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1584274961117">
+    <state width="1877" height="254" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586874286637" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585659049331">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584274961117" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1584274961117">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585659049331" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585659049331">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584274961117" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1584274961117">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585659049331" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585659049331">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584274961117" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1584274961117">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585659049331" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585659049331">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584274961117" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585659049331" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1584215575105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584215575105" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1584562222141">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1584643983421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584562222141" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584643983421" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584214910480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

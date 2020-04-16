@@ -45,7 +45,7 @@ public class MongoConsultas {
        FindIterable<Document> historialIterable = consultas.find(filtro);
        int historialPacientes = 0;
        if(!historialIterable.cursor().hasNext()) { //SI NO TIENE HISTORIAL
-           añadirConsultasHistorial(doc, id_paciente, historial); //LE CREO UNO NUEVO
+           anadirConsultasHistorial(doc, id_paciente, historial); //LE CREO UNO NUEVO
        } else { //SI YA TENIA UNO AÑADO ESTA CONSULTA A SU HISTORIAL
            String mongo_historial_consultas = Constantes.MONGO_HISTORIAL_CONSULTAS;
            List<Document> historialConsultas = (List<Document>) historialIterable.first().get(mongo_historial_consultas);
@@ -62,7 +62,7 @@ public class MongoConsultas {
        updateArrayConsultas(); //ACTUALIZO EL ARRAY DE CONSULTAS
     }
 
-    private void añadirConsultasHistorial(Doctor doc, int id_paciente, MongoCollection<Document> historial) {
+    private void anadirConsultasHistorial(Doctor doc, int id_paciente, MongoCollection<Document> historial) {
         //BUSCO EL ID DEL NUEVO DOCUMENTO PARA HISTORIAL
         long totalDocumentos = historial.countDocuments();
         int id_historial = (int) (1 + totalDocumentos);

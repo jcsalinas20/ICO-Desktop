@@ -52,19 +52,22 @@ public class LoginController implements Initializable {
 		
 		//COMPRUEBO SI LOS DATOS SON CORRECTOS
 		
-		/*
+
 		if(mongo.checkLogin(user, pass)) { 
 			loginDone(mongo);
 		} else {
 			loginError();
 		}
-		*/
 
+
+		/*
 		//PARA TESTEAR SALTO EL LOGIN
 		user = "jcsalinas";
 		pass = "1234";
 		mongo.checkLogin(user, pass);
 		loginDone(mongo);
+
+		 */
 	}
 	
 	//ES INVOCADO SI LOS DATOS DE LOGIN SON CORRECTOS
@@ -72,7 +75,6 @@ public class LoginController implements Initializable {
 		mongo.loadDoctor(); //CARGO LOS DATOS DEL DOCTOR
 		Data.interfaz.close(); //CIERRO LA ESCENA ACTUAL
 		new Interfaz().loadInterface(); //CARGO LA INTERFAZ
-		
 	}
 	
 	//ES INVOCADO SI LOS DATOS DE LOGIN SON INCORRECTOS

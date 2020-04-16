@@ -20,7 +20,7 @@
       <Polyline fill="#222750" layoutX="95.0" layoutY="386.0" points="915.0, -117.0, 915.0, 421.0, -98.99996948242188, 421.0, -98.99996948242188, -40.0" strokeType="INSIDE" AnchorPane.bottomAnchor="-2.0" AnchorPane.rightAnchor="-2.0" />
       <AnchorPane layoutX="300.0" layoutY="173.0" prefHeight="455.0" prefWidth="400.0" style="-fx-background-color: #F7FAFC;">
          <children>
-            <TextField fx:id="login_user" focusTraversable="false" layoutX="50.0" layoutY="217.0" prefHeight="40.0" prefWidth="434.0" promptText="Escribe tu usuario" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5px;" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+            <TextField fx:id="login_user" focusTraversable="false" layoutX="50.0" layoutY="217.0" prefHeight="40.0" prefWidth="434.0" promptText="%text.escribeusuario" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5px;" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
                <font>
                   <Font name="Corbel" size="16.0" />
                </font>
@@ -31,7 +31,7 @@
                   <Insets left="40.0" />
                </padding>
             </TextField>
-            <PasswordField fx:id="login_password" focusTraversable="false" layoutX="50.0" layoutY="285.0" prefHeight="40.0" prefWidth="434.0" promptText="Escribe tu contraseña" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5px;" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+            <PasswordField fx:id="login_password" focusTraversable="false" layoutX="50.0" layoutY="285.0" prefHeight="40.0" prefWidth="434.0" promptText="%text.escribepassword" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5px;" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
                <font>
                   <Font name="Corbel" size="16.0" />
                </font>

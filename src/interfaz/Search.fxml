@@ -19,7 +19,7 @@
                </font>
             </Button>
             <ImageView fx:id="paciente_image" fitHeight="250.0" fitWidth="250.0" layoutX="261.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="30.0" />
-            <Label layoutX="91.0" layoutY="316.0" text="Nombre:" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="316.0">
+            <Label layoutX="91.0" layoutY="316.0" text="%text.nombre" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="316.0">
                <font>
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
@@ -29,7 +29,7 @@
                   <Font name="SansSerif Regular" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="91.0" layoutY="366.0" text="Apellidos:" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="396.0">
+            <Label layoutX="91.0" layoutY="366.0" text="%text.apellidos" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="396.0">
                <font>
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
@@ -49,7 +49,7 @@
                   <Font name="SansSerif Regular" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="91.0" layoutY="477.0" text="Fecha de nacimiento:" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="556.0">
+            <Label layoutX="91.0" layoutY="477.0" text="%text.nacimiento" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="556.0">
                <font>
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
@@ -59,7 +59,7 @@
                   <Font name="SansSerif Regular" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="101.0" layoutY="487.0" text="Género:" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="636.0">
+            <Label layoutX="101.0" layoutY="487.0" text="%text.genero" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="636.0">
                <font>
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
@@ -71,6 +71,6 @@
             </Label>
          </children>
       </AnchorPane>
-      <TextField fx:id="search_text" onKeyReleased="#busqueda" prefHeight="54.0" prefWidth="877.0" promptText="Buscar paciente..." style="-fx-background-radius: 50px; -fx-padding: 10px 20px 10px 30px;" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="50.0" />
+      <TextField fx:id="search_text" onKeyReleased="#busqueda" prefHeight="54.0" prefWidth="877.0" promptText="%text.buscarpacientes" style="-fx-background-radius: 50px; -fx-padding: 10px 20px 10px 30px;" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="50.0" />
    </children>
 </AnchorPane>

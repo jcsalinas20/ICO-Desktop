@@ -12,6 +12,9 @@ import cifrado.Md5;
 import programa.Constantes;
 import programa.Data;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+
 public class MongoActions {
 
 	private MongoDatabase db;
@@ -37,7 +40,7 @@ public class MongoActions {
 
 			//COMPRUEBO QUE LA PASSWORD COINCIDA
 			if(password.equals(dbPassword)) {
-				return true;
+				return checkHorarios();
 			} else {
 				return false;
 			}
@@ -45,7 +48,50 @@ public class MongoActions {
 			return false;
 		}
 	}
-	
+
+	private boolean checkHorarios() {
+		//RECOJO LOS HORARIOS
+		String horario = doctor.getString(Constantes.MONGO_DOCTORES_HORARIOS);
+		String[] horarioSplit = horario.split("-");
+		int[] horarios = new int[2];
+		horarios[0] = Integer.parseInt(horarioSplit[0].replaceAll(":", ""));
+		horarios[1] = Integer.parseInt(horarioSplit[1].replaceAll(":",""));
+
+		//RECOJO LOS DIAS EN QUE TRABAJA
+		ArrayList<Integer> diasArray = (ArrayList<Integer>) doctor.get(Constantes.MONGO_DOCTORES_DIAS);
+		int[] dias = new int[7];
+		dias[0] = diasArray.get(0);
+		dias[1] = diasArray.get(1);
+		dias[2] = diasArray.get(2);
+		dias[3] = diasArray.get(3);
+		dias[4] = diasArray.get(4);
+		dias[5] = diasArray.get(5);
+		dias[6] = diasArray.get(6);
+
+		//COMPRUEBO SI LE TOCA TRABAJAR
+		Calendar now = Calendar.getInstance();
+		int diaSemana = now.get(Calendar.DAY_OF_WEEK) - 1;
+		if(dias[diaSemana] == 0) {
+			return false;
+		}
+
+		//COMPRUEBO SI ESTA EN SUS HORARIOS
+		int hora = now.get(Calendar.HOUR_OF_DAY);
+		int minutos = now.get(Calendar.MINUTE);
+		String horaActual;
+		if(minutos < 10) {
+			horaActual = hora + "0" + minutos;
+		} else {
+			horaActual = hora + "" + minutos;
+		}
+		int horaNumerica = Integer.parseInt(horaActual);
+		if(horaNumerica >= horarios[0] && horaNumerica < horarios[1]) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public void loadDoctor() {
 		//CARGO LAS COLECCIONES NECESARIAS
 		MongoCollection<Document> hospital = db.getCollection(Constantes.MONGO_HOSPITAL_COLLECTION);

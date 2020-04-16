@@ -27,6 +27,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import programa.Data;
+import traducciones.UTF8Control;
 
 public class SearchController implements Initializable {
 
@@ -143,7 +144,13 @@ public class SearchController implements Initializable {
 			AnchorPane root;
 			AnchorPane scene_panel = Interfaz.scene_panel;
 
-			root = (AnchorPane) FXMLLoader.load(getClass().getResource("Pacientes.fxml"));
+			ResourceBundle resourceBundle;
+			if(Data.catalan) {
+				resourceBundle = ResourceBundle.getBundle("traducciones/texto_cat", new UTF8Control());
+			} else {
+				resourceBundle = ResourceBundle.getBundle("traducciones/texto", new UTF8Control());
+			}
+			root = (AnchorPane) FXMLLoader.load(getClass().getResource("Pacientes.fxml"), resourceBundle);
 
 			ObservableList<Node> panelHijos = scene_panel.getChildren();
 			if(panelHijos.size() > 0) {
