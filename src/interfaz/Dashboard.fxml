@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
@@ -10,7 +17,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="940.0" prefWidth="1809.0" style="-fx-background-color: #F1F3FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaz.DashboardController">
+<AnchorPane prefHeight="940.0" prefWidth="1809.0" style="-fx-background-color: #F1F3FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaz.DashboardController">
    <children>
       <AnchorPane prefHeight="247.0" prefWidth="1291.0" style="-fx-background-color: #CDE1F9; -fx-background-radius: 50px;" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="5.0">
          <children>

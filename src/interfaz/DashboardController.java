@@ -84,7 +84,7 @@ public class DashboardController implements Initializable  {
         if(Data.catalan) {
             hola = "HOLA ";
         } else {
-            hola = "¡HOLA ";
+            hola = "!HOLA ";
         }
         nombre_doctor.setText(hola + Data.doctor.getNombre().toUpperCase() + "!");
         calcularDatos();
